@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Tue Mar 26 16:31:56 2024
+# Process ID: 14288
+# Current directory: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent20900 C:\Users\bsiva\Desktop\mahesh\University\SEM_4\CG2026\FPGA_EMODS\MODS.xpr
+# Log file: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/vivado.log
+# Journal file: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.xpr
+update_compile_order -fileset sources_1
+close [ open C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v w ]
+add_files C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v
+update_compile_order -fileset sources_1
