@@ -27,10 +27,10 @@ module Top_Student (
     wire [15:0] rom_pixel_data;
     
     // Instantiate the eggs_rom module
-    background_ghost_rom my_rom (
+    background my_rom (
         .clk(clk), // Connect to the system clock
-        .row(oled_pixel_index[12:6]), // Map the higher bits to the row
-        .col(oled_pixel_index[5:0]),  // Map the lower bits to the column
+        .row(oled_pixel_index[12:7]), // Map the higher bits to the row
+        .col(oled_pixel_index[6:0]),  // Map the lower bits to the column
         .color_data(rom_pixel_data)    // Connect the ROM output to the wire
     );
     
