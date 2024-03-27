@@ -6,16 +6,16 @@ module Top_Student (
 // Control
     input clk,
     // LEDs, Switches, Buttons
-    input btnC, btnU, btnL, btnR, btnD, input [15:0] sw, output [15:0] led,
+    //input btnC, btnU, btnL, btnR, btnD, input [15:0] sw, output [15:0] led,
     // 7 Segment Display
-    output [6:0] seg, output dp, output [3:0] an,
+    //output [6:0] seg, output dp, output [3:0] an,
     // OLED PMOD
-    inout [7:0] JB,
-    inout mouse_ps2_clk, mouse_ps2_data
+    output [7:0] JC
+    //inout mouse_ps2_clk, mouse_ps2_data
 );
 
     wire [7:0] Jx;
-    assign JB[7:0] = Jx;
+    assign JC[7:0] = Jx;
     // Outputs
     wire [12:0] oled_pixel_index;
     wire [15:0] oled_pixel_data;
@@ -29,8 +29,8 @@ module Top_Student (
     // Instantiate the eggs_rom module
     background_ghost_rom my_rom (
         .clk(clk), // Connect to the system clock
-        .row(oled_pixel_index[12:7]), // Map the higher bits to the row
-        .col(oled_pixel_index[6:0]),  // Map the lower bits to the column
+        .row(oled_pixel_index[12:6]), // Map the higher bits to the row
+        .col(oled_pixel_index[5:0]),  // Map the lower bits to the column
         .color_data(rom_pixel_data)    // Connect the ROM output to the wire
     );
     
