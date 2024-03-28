@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Thu Mar 28 14:45:37 2024
+| Date         : Thu Mar 28 15:38:05 2024
 | Host         : LAPTOP-O0D571VU running 64-bit major release  (build 9200)
 | Command      : report_drc -file Top_Student_drc_routed.rpt -pb Top_Student_drc_routed.pb -rpx Top_Student_drc_routed.rpx
 | Design       : Top_Student
@@ -24,18 +24,12 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 1
-+----------+----------+-------------------+------------+
-| Rule     | Severity | Description       | Violations |
-+----------+----------+-------------------+------------+
-| PDRC-153 | Warning  | Gated clock check | 1          |
-+----------+----------+-------------------+------------+
+             Violations found: 0
++------+----------+-------------+------------+
+| Rule | Severity | Description | Violations |
++------+----------+-------------+------------+
++------+----------+-------------+------------+
 
 2. REPORT DETAILS
 -----------------
-PDRC-153#1 Warning
-Gated clock check  
-Net my_platforms/blocks_unit/color_data_n_0 is a gated clock net sourced by a combinational pin my_platforms/blocks_unit/color_data/O, cell my_platforms/blocks_unit/color_data. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
 
