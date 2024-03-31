@@ -20,7 +20,9 @@ module Top_Student (
     // Additional wires for ROM outputs and platform status
     wire [15:0] background_pixel_data;
     wire [15:0] platform_pixel_data;
+    wire [15:0] hearts_pixel_data; // Wire for hearts color data
     wire platforms_on;
+    wire hearts_on; // Signal to indicate when hearts are on
     
     // Instantiate the background module
     background my_background (
@@ -38,9 +40,20 @@ module Top_Student (
         .rgb_out(platform_pixel_data),
         .platforms_on(platforms_on)
     );
+
+    // Instantiate the hearts_display module
+    hearts_display my_hearts (
+        .clk(clk),
+        .pixel_index(oled_pixel_index),
+        .num_hearts(2),
+        .color_data(hearts_pixel_data),
+        .hearts_on(hearts_on)
+    );
     
-    // Combine the pixel data from background and platforms
-    assign oled_pixel_data = platforms_on ? platform_pixel_data : background_pixel_data;
+    // Combine the pixel data from background and platforms, and hearts
+        assign oled_pixel_data = hearts_on ? hearts_pixel_data :
+                            platforms_on ? platform_pixel_data :
+                            background_pixel_data;
     
     // Instantiate the OLED display module
     Oled_Display display(

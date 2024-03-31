@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -36,6 +35,8 @@ read_verilog -library xil_defaultlib {
   C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v
   C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v
   C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/flexible_clock.v
+  C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/hearts_display.v
+  C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/hearts_rom.v
   C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/platforms.v
   C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/walls_rom.v
   C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/Top_Student.v
