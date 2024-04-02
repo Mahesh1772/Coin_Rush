@@ -2,12 +2,12 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Thu Mar 28 23:16:11 2024
-# Process ID: 10792
-# Current directory: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.runs/synth_1
+# Start of session at: Wed Apr  3 03:56:06 2024
+# Process ID: 36020
+# Current directory: C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.runs/synth_1
 # Command line: vivado.exe -log Top_Student.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_Student.tcl
-# Log file: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.runs/synth_1/Top_Student.vds
-# Journal file: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.runs/synth_1\vivado.jou
+# Log file: C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.runs/synth_1/Top_Student.vds
+# Journal file: C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source Top_Student.tcl -notrace
 Command: synth_design -top Top_Student -part xc7a35tcpg236-1
@@ -15,31 +15,31 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 16172 
+INFO: Helper process launched with PID 34332 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 359.211 ; gain = 102.918
+Starting RTL Elaboration : Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 364.086 ; gain = 102.820
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'Top_Student' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/Top_Student.v:3]
+INFO: [Synth 8-6157] synthesizing module 'Top_Student' [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/Top_Student.v:3]
 	Parameter SCREEN_WIDTH bound to: 96 - type: integer 
 	Parameter SCREEN_HEIGHT bound to: 64 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'flexible_clock' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/flexible_clock.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'flexible_clock' (1#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/flexible_clock.v:23]
-INFO: [Synth 8-6157] synthesizing module 'background' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:23]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "block" *) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:33]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:43]
-INFO: [Synth 8-6155] done synthesizing module 'background' (2#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:23]
-INFO: [Synth 8-6157] synthesizing module 'platforms' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/platforms.v:180]
+INFO: [Synth 8-6157] synthesizing module 'flexible_clock' [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/flexible_clock.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'flexible_clock' (1#1) [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/flexible_clock.v:23]
+INFO: [Synth 8-6157] synthesizing module 'background' [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:23]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "block" *) [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:33]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:43]
+INFO: [Synth 8-6155] done synthesizing module 'background' (2#1) [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:23]
+INFO: [Synth 8-6157] synthesizing module 'platforms' [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/platforms.v:3]
 	Parameter SCREEN_WIDTH bound to: 96 - type: integer 
 	Parameter SCREEN_HEIGHT bound to: 64 - type: integer 
 	Parameter offset bound to: 4 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'walls_rom' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/walls_rom.v:61]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "block" *) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/walls_rom.v:71]
-INFO: [Synth 8-6155] done synthesizing module 'walls_rom' (3#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/walls_rom.v:61]
-INFO: [Synth 8-6157] synthesizing module 'blocks_rom' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:112]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "block" *) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:122]
-INFO: [Synth 8-6155] done synthesizing module 'blocks_rom' (4#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:112]
-INFO: [Synth 8-6155] done synthesizing module 'platforms' (5#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/platforms.v:180]
-INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
+INFO: [Synth 8-6157] synthesizing module 'walls_rom' [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/walls_rom.v:61]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "block" *) [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/walls_rom.v:71]
+INFO: [Synth 8-6155] done synthesizing module 'walls_rom' (3#1) [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/walls_rom.v:61]
+INFO: [Synth 8-6157] synthesizing module 'blocks_rom' [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:112]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "block" *) [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:122]
+INFO: [Synth 8-6155] done synthesizing module 'blocks_rom' (4#1) [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:112]
+INFO: [Synth 8-6155] done synthesizing module 'platforms' (5#1) [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/platforms.v:3]
+INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
 	Parameter Width bound to: 96 - type: integer 
 	Parameter Height bound to: 64 - type: integer 
 	Parameter PixelCount bound to: 6144 - type: integer 
@@ -90,14 +90,25 @@ INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/Users/bsiva/Desktop/
 	Parameter SendPixel bound to: 5'b10000 
 	Parameter SpiCommandMaxWidth bound to: 40 - type: integer 
 	Parameter SpiCommandBitCountWidth bound to: 6 - type: integer 
-INFO: [Synth 8-226] default block is never used [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:123]
-INFO: [Synth 8-226] default block is never used [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:198]
-WARNING: [Synth 8-693] zero replication count - replication ignored [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:346]
-INFO: [Synth 8-6155] done synthesizing module 'Oled_Display' (6#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
-INFO: [Synth 8-6155] done synthesizing module 'Top_Student' (7#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/Top_Student.v:3]
+INFO: [Synth 8-226] default block is never used [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:123]
+INFO: [Synth 8-226] default block is never used [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:198]
+WARNING: [Synth 8-693] zero replication count - replication ignored [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:346]
+INFO: [Synth 8-6155] done synthesizing module 'Oled_Display' (6#1) [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
+INFO: [Synth 8-6157] synthesizing module 'mini_game' [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/mini_game.v:23]
+INFO: [Synth 8-6157] synthesizing module 'seg_display' [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/seg_display.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/seg_display.v:37]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/seg_display.v:52]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/seg_display.v:65]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/seg_display.v:78]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/seg_display.v:91]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/seg_display.v:104]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/seg_display.v:117]
+INFO: [Synth 8-6155] done synthesizing module 'seg_display' (7#1) [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/seg_display.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'mini_game' (8#1) [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/mini_game.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Top_Student' (9#1) [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/Top_Student.v:3]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port JC[2]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 434.141 ; gain = 177.848
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 440.406 ; gain = 179.141
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -110,54 +121,53 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 434.141 ; gain = 177.848
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 440.406 ; gain = 179.141
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 434.141 ; gain = 177.848
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 440.406 ; gain = 179.141
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/constrs_1/new/constraints.xdc]
-CRITICAL WARNING: [Designutils 20-1307] Command 'Vanguard,' is not supported in the xdc constraint file. [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/constrs_1/new/constraints.xdc:1]
-CRITICAL WARNING: [Designutils 20-1307] Command '16/3/2024' is not supported in the xdc constraint file. [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/constrs_1/new/constraints.xdc:1]
-Finished Parsing XDC File [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/constrs_1/new/constraints.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/constrs_1/new/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_Student_propImpl.xdc].
+Parsing XDC File [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/constrs_1/new/constraints.xdc]
+Finished Parsing XDC File [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/constrs_1/new/constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/constrs_1/new/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_Student_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/Top_Student_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 747.875 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 762.562 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:20 . Memory (MB): peak = 747.875 ; gain = 491.582
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:24 . Memory (MB): peak = 762.562 ; gain = 501.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:20 . Memory (MB): peak = 747.875 ; gain = 491.582
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:24 . Memory (MB): peak = 762.562 ; gain = 501.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:20 . Memory (MB): peak = 747.875 ; gain = 491.582
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:03 ; elapsed = 00:00:24 . Memory (MB): peak = 762.562 ; gain = 501.297
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "slow_clk0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-WARNING: [Synth 8-6014] Unused sequential element row_reg_reg was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:38]
-WARNING: [Synth 8-6014] Unused sequential element col_reg_reg was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:39]
-WARNING: [Synth 8-6014] Unused sequential element  was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:43]
-WARNING: [Synth 8-6014] Unused sequential element  was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:43]
+WARNING: [Synth 8-6014] Unused sequential element row_reg_reg was removed.  [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:38]
+WARNING: [Synth 8-6014] Unused sequential element col_reg_reg was removed.  [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:39]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:43]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:43]
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Oled_Display'
 INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "fsm_next_state0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-327] inferring latch for variable 'color_data_reg' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:46]
+WARNING: [Synth 8-3936] Found unconnected internal register 'lfsr_state_reg' and it is trimmed from '16' to '15' bits. [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/mini_game.v:39]
+WARNING: [Synth 8-327] inferring latch for variable 'color_data_reg' [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:46]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -196,7 +206,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'color_data_reg' [C:/Users/b
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Oled_Display'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:29 ; elapsed = 00:00:40 . Memory (MB): peak = 747.875 ; gain = 491.582
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:32 . Memory (MB): peak = 762.562 ; gain = 501.297
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -209,16 +219,22 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 6     
+	   2 Input     32 Bit       Adders := 1     
 	   2 Input     17 Bit       Adders := 1     
 	   2 Input      6 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   4 Input      1 Bit         XORs := 1     
 +---Registers : 
 	               40 Bit    Registers := 1     
 	               17 Bit    Registers := 1     
+	               15 Bit    Registers := 1     
 	               13 Bit    Registers := 2     
+	                7 Bit    Registers := 1     
 	                6 Bit    Registers := 1     
-	                2 Bit    Registers := 4     
-	                1 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 5     
+	                1 Bit    Registers := 3     
 +---ROMs : 
 	                              ROMs := 2     
 +---Muxes : 
@@ -229,11 +245,18 @@ Detailed RTL Component Info :
 	   2 Input     17 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 15    
 	  16 Input     15 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 4     
 	  32 Input      6 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 2     
 	  32 Input      5 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 15    
+	   2 Input      4 Bit        Muxes := 3     
+	   7 Input      4 Bit        Muxes := 1     
+	   8 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 22    
+	   7 Input      1 Bit        Muxes := 2     
+	  11 Input      1 Bit        Muxes := 1     
+	  15 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -269,10 +292,9 @@ Detailed RTL Component Info :
 	  16 Input     15 Bit        Muxes := 1     
 Module platforms 
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     32 Bit       Adders := 6     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 14    
+	   8 Input      2 Bit        Muxes := 2     
 	   2 Input      1 Bit        Muxes := 12    
 Module Oled_Display 
 Detailed RTL Component Info : 
@@ -294,6 +316,33 @@ Detailed RTL Component Info :
 	   2 Input      5 Bit        Muxes := 2     
 	  32 Input      5 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 2     
+Module seg_display 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      7 Bit        Muxes := 4     
+	   2 Input      4 Bit        Muxes := 3     
+	   7 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+	   7 Input      1 Bit        Muxes := 2     
+	  11 Input      1 Bit        Muxes := 1     
+Module mini_game 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---XORs : 
+	   4 Input      1 Bit         XORs := 1     
++---Registers : 
+	               15 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	  15 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -311,21 +360,36 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 INFO: [Synth 8-5545] ROM "slow_clk0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-4471] merging register 'blocks_unit/col_reg_reg[1:0]' into 'walls_unit/col_reg_reg[1:0]' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:128]
-INFO: [Synth 8-4471] merging register 'blocks_unit/row_reg_reg[1:0]' into 'walls_unit/row_reg_reg[1:0]' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:127]
-WARNING: [Synth 8-6014] Unused sequential element blocks_unit/col_reg_reg was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:128]
-WARNING: [Synth 8-6014] Unused sequential element blocks_unit/row_reg_reg was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:127]
+INFO: [Synth 8-4471] merging register 'blocks_unit/col_reg_reg[1:0]' into 'walls_unit/col_reg_reg[1:0]' [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:128]
+INFO: [Synth 8-4471] merging register 'blocks_unit/row_reg_reg[1:0]' into 'walls_unit/row_reg_reg[1:0]' [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:127]
+WARNING: [Synth 8-6014] Unused sequential element blocks_unit/col_reg_reg was removed.  [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:128]
+WARNING: [Synth 8-6014] Unused sequential element blocks_unit/row_reg_reg was removed.  [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:127]
 INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-6014] Unused sequential element sel was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:43]
-WARNING: [Synth 8-6014] Unused sequential element sel was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:43]
-WARNING: [Synth 8-6014] Unused sequential element sel_rep was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:43]
+WARNING: [Synth 8-3936] Found unconnected internal register 'lfsr_state_reg' and it is trimmed from '15' to '14' bits. [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/mini_game.v:39]
+INFO: [Synth 8-5545] ROM "unit/clk_10kHz/slow_clk0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element sel was removed.  [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:43]
+WARNING: [Synth 8-6014] Unused sequential element sel was removed.  [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:43]
+WARNING: [Synth 8-6014] Unused sequential element sel_rep was removed.  [C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:43]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port JC[2]
+INFO: [Synth 8-3886] merging instance 'play_mini_game/lfsr_state_reg[3]' (FDE) to 'play_mini_game/random_num_reg[3]'
+INFO: [Synth 8-3886] merging instance 'play_mini_game/lfsr_state_reg[1]' (FDE) to 'play_mini_game/random_num_reg[1]'
+INFO: [Synth 8-3886] merging instance 'play_mini_game/unit/an_reg[2]' (FDE) to 'play_mini_game/unit/an_reg[3]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\play_mini_game/unit/an_reg[3] )
+WARNING: [Synth 8-3332] Sequential element (play_mini_game/lfsr_state_reg[13]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (play_mini_game/lfsr_state_reg[12]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (play_mini_game/lfsr_state_reg[11]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (play_mini_game/lfsr_state_reg[10]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (play_mini_game/lfsr_state_reg[9]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (play_mini_game/lfsr_state_reg[8]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (play_mini_game/lfsr_state_reg[7]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (play_mini_game/lfsr_state_reg[6]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (play_mini_game/unit/an_reg[3]) is unused and will be removed from module Top_Student.
 WARNING: [Synth 8-3332] Sequential element (my_platforms/walls_unit/col_reg_reg[1]) is unused and will be removed from module Top_Student.
 WARNING: [Synth 8-3332] Sequential element (my_platforms/walls_unit/col_reg_reg[0]) is unused and will be removed from module Top_Student.
 WARNING: [Synth 8-3332] Sequential element (my_platforms/walls_unit/row_reg_reg[0]) is unused and will be removed from module Top_Student.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:01:05 . Memory (MB): peak = 747.875 ; gain = 491.582
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:42 . Memory (MB): peak = 762.562 ; gain = 501.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -337,18 +401,16 @@ ROM:
 +------------+------------+---------------+----------------+
 |background  | color_data | 8192x16       | Block RAM      | 
 |background  | color_data | 8192x1        | Block RAM      | 
-|Top_Student | sel_rep    | 8192x16       | Block RAM      | 
-|Top_Student | sel        | 8192x1        | Block RAM      | 
 +------------+------------+---------------+----------------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4480] The timing for the instance i_1/sel_rep_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_1/sel_rep_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_1/sel_rep_2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_1/sel_rep_3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_2/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_0/sel_rep_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_0/sel_rep_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_0/sel_rep_2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_0/sel_rep_3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_1/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -359,13 +421,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:55 ; elapsed = 00:01:16 . Memory (MB): peak = 755.242 ; gain = 498.949
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:48 . Memory (MB): peak = 765.891 ; gain = 504.625
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:55 ; elapsed = 00:01:16 . Memory (MB): peak = 774.957 ; gain = 518.664
+Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:48 . Memory (MB): peak = 786.789 ; gain = 525.523
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -382,7 +444,7 @@ INFO: [Synth 8-4480] The timing for the instance sel_rep_2 (implemented as a blo
 INFO: [Synth 8-4480] The timing for the instance sel_rep_3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:56 ; elapsed = 00:01:17 . Memory (MB): peak = 795.125 ; gain = 538.832
+Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:49 . Memory (MB): peak = 800.020 ; gain = 538.754
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -406,7 +468,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:56 ; elapsed = 00:01:18 . Memory (MB): peak = 795.125 ; gain = 538.832
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:49 . Memory (MB): peak = 800.020 ; gain = 538.754
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -419,7 +481,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:56 ; elapsed = 00:01:18 . Memory (MB): peak = 795.125 ; gain = 538.832
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:49 . Memory (MB): peak = 800.020 ; gain = 538.754
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -431,25 +493,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:56 ; elapsed = 00:01:18 . Memory (MB): peak = 795.125 ; gain = 538.832
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:49 . Memory (MB): peak = 800.020 ; gain = 538.754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:56 ; elapsed = 00:01:18 . Memory (MB): peak = 795.125 ; gain = 538.832
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:49 . Memory (MB): peak = 800.020 ; gain = 538.754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:56 ; elapsed = 00:01:18 . Memory (MB): peak = 795.125 ; gain = 538.832
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:49 . Memory (MB): peak = 800.020 ; gain = 538.754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:56 ; elapsed = 00:01:18 . Memory (MB): peak = 795.125 ; gain = 538.832
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:49 . Memory (MB): peak = 800.020 ; gain = 538.754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -466,45 +528,49 @@ Report Cell Usage:
 |      |Cell       |Count |
 +------+-----------+------+
 |1     |BUFG       |     2|
-|2     |CARRY4     |    36|
-|3     |LUT1       |     7|
-|4     |LUT2       |    62|
-|5     |LUT3       |    51|
-|6     |LUT4       |    52|
-|7     |LUT5       |    45|
-|8     |LUT6       |   149|
+|2     |CARRY4     |    60|
+|3     |LUT1       |    23|
+|4     |LUT2       |    77|
+|5     |LUT3       |    62|
+|6     |LUT4       |    53|
+|7     |LUT5       |    51|
+|8     |LUT6       |   145|
 |9     |RAMB18E1   |     1|
 |10    |RAMB36E1   |     1|
 |11    |RAMB36E1_1 |     1|
 |12    |RAMB36E1_2 |     1|
 |13    |RAMB36E1_3 |     1|
 |14    |FDE_1      |    32|
-|15    |FDRE       |   117|
-|16    |LD         |    16|
-|17    |IBUF       |     1|
-|18    |OBUF       |     7|
-|19    |OBUFT      |     1|
+|15    |FDRE       |   201|
+|16    |FDSE       |     1|
+|17    |LD         |    16|
+|18    |IBUF       |    17|
+|19    |OBUF       |    19|
+|20    |OBUFT      |     1|
 +------+-----------+------+
 
 Report Instance Areas: 
-+------+----------------+---------------+------+
-|      |Instance        |Module         |Cells |
-+------+----------------+---------------+------+
-|1     |top             |               |   583|
-|2     |  clk1          |flexible_clock |    64|
-|3     |  display       |Oled_Display   |   419|
-|4     |  my_background |background     |    16|
-|5     |  my_platforms  |platforms      |    67|
-|6     |    walls_unit  |walls_rom      |    34|
-+------+----------------+---------------+------+
++------+-----------------+-----------------+------+
+|      |Instance         |Module           |Cells |
++------+-----------------+-----------------+------+
+|1     |top              |                 |   765|
+|2     |  clk1           |flexible_clock   |    63|
+|3     |  display        |Oled_Display     |   440|
+|4     |  my_background  |background       |    16|
+|5     |  my_platforms   |platforms        |    42|
+|6     |    walls_unit   |walls_rom        |     3|
+|7     |  play_mini_game |mini_game        |   159|
+|8     |    unit         |seg_display      |    76|
+|9     |      clk_10kHz  |flexible_clock_0 |    53|
++------+-----------------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:56 ; elapsed = 00:01:18 . Memory (MB): peak = 795.125 ; gain = 538.832
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:49 . Memory (MB): peak = 800.020 ; gain = 538.754
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 14 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:47 ; elapsed = 00:01:09 . Memory (MB): peak = 795.125 ; gain = 225.098
-Synthesis Optimization Complete : Time (s): cpu = 00:00:57 ; elapsed = 00:01:19 . Memory (MB): peak = 795.125 ; gain = 538.832
+Synthesis finished with 0 errors, 0 critical warnings and 25 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:44 . Memory (MB): peak = 800.020 ; gain = 216.598
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:49 . Memory (MB): peak = 800.020 ; gain = 538.754
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 90 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 130 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -514,11 +580,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   LD => LDCE: 16 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-53 Infos, 16 Warnings, 2 Critical Warnings and 0 Errors encountered.
+69 Infos, 27 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:59 ; elapsed = 00:01:22 . Memory (MB): peak = 795.125 ; gain = 551.531
+synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:51 . Memory (MB): peak = 800.020 ; gain = 551.789
 WARNING: [Constraints 18-5210] No constraint will be written out.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.runs/synth_1/Top_Student.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.runs/synth_1/Top_Student.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Top_Student_utilization_synth.rpt -pb Top_Student_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.051 . Memory (MB): peak = 795.125 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Thu Mar 28 23:17:40 2024...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 800.020 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Apr  3 03:57:10 2024...

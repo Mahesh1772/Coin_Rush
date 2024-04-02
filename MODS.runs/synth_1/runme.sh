@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.runs/synth_1'
+HD_PWD='C:/Users/kishe/OneDrive/Desktop/EE2026/FPGA_EMODS/MODS.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

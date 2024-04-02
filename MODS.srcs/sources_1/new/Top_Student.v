@@ -2,6 +2,10 @@
 
 module Top_Student (
     input clk,
+    input [15:0] sw,
+    output [3:0] an,
+    output [6:0] seg,
+    output led,
     output [7:0] JC
 );
 
@@ -48,5 +52,15 @@ module Top_Student (
         .frame_begin(), .sending_pixels(), .sample_pixel(), .pixel_index(oled_pixel_index), .pixel_data(oled_pixel_data), 
         .cs(Jx[0]), .sdin(Jx[1]), .sclk(Jx[3]), .d_cn(Jx[4]), .resn(Jx[5]), .vccen(Jx[6]), .pmoden(Jx[7])
     );
-
+    
+    wire [3:0] an_wire;
+    wire [6:0] seg_wire;
+    wire led_wire;
+    
+    mini_game play_mini_game (clk, sw, an_wire, seg_wire, led_wire);
+    
+    assign an = an_wire;
+    assign seg = seg_wire;
+    assign led = led_wire;
+    
 endmodule
