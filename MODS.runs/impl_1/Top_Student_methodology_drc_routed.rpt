@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Wed Apr  3 03:58:13 2024
+| Date         : Thu Apr  4 01:13:33 2024
 | Host         : Kishen running 64-bit major release  (build 9200)
 | Command      : report_methodology -file Top_Student_methodology_drc_routed.rpt -pb Top_Student_methodology_drc_routed.pb -rpx Top_Student_methodology_drc_routed.rpx
 | Design       : Top_Student
@@ -23,13 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 167
+             Violations found: 165
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
-| TIMING-17 | Warning  | Non-clocked sequential cell   | 126        |
-| TIMING-18 | Warning  | Missing input or output delay | 25         |
-| TIMING-20 | Warning  | Non-clocked latch             | 16         |
+| TIMING-17 | Warning  | Non-clocked sequential cell   | 115        |
+| TIMING-18 | Warning  | Missing input or output delay | 27         |
+| TIMING-20 | Warning  | Non-clocked latch             | 23         |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
@@ -609,61 +609,6 @@ Non-clocked sequential cell
 The clock pin display/spi_word_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#116 Warning
-Non-clocked sequential cell  
-The clock pin play_mini_game/unit/an_reg[0]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#117 Warning
-Non-clocked sequential cell  
-The clock pin play_mini_game/unit/an_reg[1]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#118 Warning
-Non-clocked sequential cell  
-The clock pin play_mini_game/unit/counter_reg[0]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#119 Warning
-Non-clocked sequential cell  
-The clock pin play_mini_game/unit/counter_reg[1]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#120 Warning
-Non-clocked sequential cell  
-The clock pin play_mini_game/unit/seg_reg[0]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#121 Warning
-Non-clocked sequential cell  
-The clock pin play_mini_game/unit/seg_reg[1]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#122 Warning
-Non-clocked sequential cell  
-The clock pin play_mini_game/unit/seg_reg[2]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#123 Warning
-Non-clocked sequential cell  
-The clock pin play_mini_game/unit/seg_reg[3]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#124 Warning
-Non-clocked sequential cell  
-The clock pin play_mini_game/unit/seg_reg[4]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#125 Warning
-Non-clocked sequential cell  
-The clock pin play_mini_game/unit/seg_reg[5]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#126 Warning
-Non-clocked sequential cell  
-The clock pin play_mini_game/unit/seg_reg[6]/C is not reached by a timing clock
-Related violations: <none>
-
 TIMING-18#1 Warning
 Missing input or output delay  
 An input delay is missing on sw[0] relative to clock(s) sys_clk_pin
@@ -786,7 +731,17 @@ Related violations: <none>
 
 TIMING-18#25 Warning
 Missing input or output delay  
-An output delay is missing on led relative to clock(s) sys_clk_pin
+An output delay is missing on led[10] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#26 Warning
+Missing input or output delay  
+An output delay is missing on led[11] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#27 Warning
+Missing input or output delay  
+An output delay is missing on led[12] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-20#1 Warning
@@ -867,6 +822,41 @@ Related violations: <none>
 TIMING-20#16 Warning
 Non-clocked latch  
 The latch my_background/color_data_reg[9] cannot be properly analyzed as its control pin my_background/color_data_reg[9]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#17 Warning
+Non-clocked latch  
+The latch play_mini_game/unit/seg_reg[0] cannot be properly analyzed as its control pin play_mini_game/unit/seg_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#18 Warning
+Non-clocked latch  
+The latch play_mini_game/unit/seg_reg[1] cannot be properly analyzed as its control pin play_mini_game/unit/seg_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#19 Warning
+Non-clocked latch  
+The latch play_mini_game/unit/seg_reg[2] cannot be properly analyzed as its control pin play_mini_game/unit/seg_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#20 Warning
+Non-clocked latch  
+The latch play_mini_game/unit/seg_reg[3] cannot be properly analyzed as its control pin play_mini_game/unit/seg_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#21 Warning
+Non-clocked latch  
+The latch play_mini_game/unit/seg_reg[4] cannot be properly analyzed as its control pin play_mini_game/unit/seg_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#22 Warning
+Non-clocked latch  
+The latch play_mini_game/unit/seg_reg[5] cannot be properly analyzed as its control pin play_mini_game/unit/seg_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#23 Warning
+Non-clocked latch  
+The latch play_mini_game/unit/seg_reg[6] cannot be properly analyzed as its control pin play_mini_game/unit/seg_reg[6]/G is not reached by a timing clock
 Related violations: <none>
 
 

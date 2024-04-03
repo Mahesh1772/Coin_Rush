@@ -5,7 +5,7 @@ module Top_Student (
     input [15:0] sw,
     output [3:0] an,
     output [6:0] seg,
-    output led,
+    output [12:10] led,
     output [7:0] JC
 );
 
@@ -55,7 +55,7 @@ module Top_Student (
     
     wire [3:0] an_wire;
     wire [6:0] seg_wire;
-    wire led_wire;
+    wire [2:0] led_wire;
     
     mini_game play_mini_game (clk, sw, an_wire, seg_wire, led_wire);
     

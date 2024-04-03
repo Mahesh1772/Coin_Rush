@@ -49,25 +49,25 @@ module random_number_generator(
     assign seg = seg_wire;
     
     always @ (posedge clk) begin
-        if (random_num == 0 && sw == 16'b000000_00000_00001)
+        if (random_num == 0 && sw == 10'b00000_00001)
             led <= 1;
-        else if (random_num == 1 && sw == 16'b000000_00000_00010)
+        else if (random_num == 1 && sw == 10'b00000_00010)
             led <= 1;
-        else if (random_num == 2 && sw == 16'b000000_00000_00100)
+        else if (random_num == 2 && sw == 10'b00000_00100)
             led <= 1;
-        else if (random_num == 3 && sw == 16'b000000_00000_01000)
+        else if (random_num == 3 && sw == 10'b00000_01000)
             led <= 1;
-        else if (random_num == 4 && sw == 16'b000000_00000_10000)
+        else if (random_num == 4 && sw == 10'b00000_10000)
             led <= 1;
-        else if (random_num == 5 && sw == 16'b000000_00001_00000)
+        else if (random_num == 5 && sw == 10'b00001_00000)
             led <= 1;
-        else if (random_num == 6 && sw == 16'b000000_00010_00000)
+        else if (random_num == 6 && sw == 10'b00010_00000)
             led <= 1;
-        else if (random_num == 7 && sw == 16'b000000_00100_00000)
+        else if (random_num == 7 && sw == 10'b00100_00000)
             led <= 1;
-        else if (random_num == 8 && sw == 16'b000000_01000_00000)
+        else if (random_num == 8 && sw == 10'b01000_00000)
             led <= 1;
-        else if (random_num == 9 && sw == 16'b000000_10000_00000)
+        else if (random_num == 9 && sw == 10'b10000_00000)
             led <= 1;
         else if (random_num == 10 && sw == 16'b000001_00000_00000)
             led <= 1;
