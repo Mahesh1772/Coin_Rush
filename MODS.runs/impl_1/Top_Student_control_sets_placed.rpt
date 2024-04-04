@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Sun Mar 31 09:24:01 2024
-| Host         : LAPTOP-O0D571VU running 64-bit major release  (build 9200)
+| Date         : Thu Apr  4 11:22:10 2024
+| Host         : Aak242 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Top_Student_control_sets_placed.rpt
 | Design       : Top_Student
 | Device       : xc7a35t
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |     9 |
-| Unused register locations in slices containing registers |    12 |
+| Number of unique control sets                            |    17 |
+| Unused register locations in slices containing registers |    30 |
 +----------------------------------------------------------+-------+
 
 
@@ -35,9 +35,10 @@ Table of Contents
 | Fanout | Control Sets |
 +--------+--------------+
 |      4 |            1 |
-|      6 |            1 |
 |      8 |            1 |
-|    16+ |            6 |
+|     12 |            1 |
+|     14 |            2 |
+|    16+ |           12 |
 +--------+--------------+
 
 
@@ -47,10 +48,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              42 |           11 |
+| No           | No                    | No                     |              52 |           14 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |             194 |           32 |
-| Yes          | No                    | No                     |             104 |           16 |
+| No           | Yes                   | No                     |             194 |           33 |
+| Yes          | No                    | No                     |             356 |           64 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -59,18 +60,26 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+-------------------+--------------------------------------+-----------------------------------+------------------+----------------+
-|    Clock Signal   |             Enable Signal            |          Set/Reset Signal         | Slice Load Count | Bel Load Count |
-+-------------------+--------------------------------------+-----------------------------------+------------------+----------------+
-| ~clk_6_25mhz_BUFG |                                      |                                   |                2 |              4 |
-|  clk_IBUF_BUFG    |                                      |                                   |                3 |              6 |
-|  clk_IBUF_BUFG    |                                      | display/row_reg_reg[0]            |                2 |              8 |
-|  sel_n_15         |                                      |                                   |                6 |             32 |
-| ~clk_6_25mhz_BUFG |                                      | display/frame_counter[16]_i_1_n_0 |                4 |             32 |
-| ~clk_6_25mhz_BUFG | display/delay[0]_i_1_n_0             |                                   |                5 |             40 |
-|  clk_IBUF_BUFG    |                                      | clk1/clear                        |                8 |             64 |
-| ~clk_6_25mhz_BUFG | display/FSM_onehot_state[31]_i_1_n_0 |                                   |               11 |             64 |
-| ~clk_6_25mhz_BUFG |                                      | display/spi_word[39]_i_1_n_0      |               18 |             90 |
-+-------------------+--------------------------------------+-----------------------------------+------------------+----------------+
++-------------------+--------------------------------------+----------------------------------------------+------------------+----------------+
+|    Clock Signal   |             Enable Signal            |               Set/Reset Signal               | Slice Load Count | Bel Load Count |
++-------------------+--------------------------------------+----------------------------------------------+------------------+----------------+
+| ~clk_6_25mhz_BUFG |                                      |                                              |                2 |              4 |
+|  clk_IBUF_BUFG    |                                      | my_hearts/hearts_rom_unit/col_reg[1]_i_1_n_0 |                3 |              8 |
+|  clk_IBUF_BUFG    | yoshi_unit/x_start_next              |                                              |                2 |             12 |
+|  clk_IBUF_BUFG    | yoshi_unit/s_x_next_0                |                                              |                2 |             14 |
+|  clk_IBUF_BUFG    | yoshi_unit/s_y_next_1                |                                              |                2 |             14 |
+|  clk_IBUF_BUFG    |                                      |                                              |                5 |             16 |
+|  clk_IBUF_BUFG    | yoshi_unit/start_next_y              |                                              |                6 |             30 |
+| ~clk_6_25mhz_BUFG |                                      | display/frame_counter[16]_i_1_n_0            |                4 |             32 |
+|  sel_n_15         |                                      |                                              |                7 |             32 |
+| ~clk_6_25mhz_BUFG | display/delay[0]_i_1_n_0             |                                              |                5 |             40 |
+|  clk_IBUF_BUFG    | yoshi_unit/jump_t_next               |                                              |               12 |             40 |
+|  clk_IBUF_BUFG    | yoshi_unit/x_time_next               |                                              |                8 |             40 |
+|  clk_IBUF_BUFG    | yoshi_unit/walk_t_next               |                                              |                8 |             50 |
+|  clk_IBUF_BUFG    | yoshi_unit/extra_up_next             |                                              |               10 |             52 |
+| ~clk_6_25mhz_BUFG | display/FSM_onehot_state[31]_i_1_n_0 |                                              |                9 |             64 |
+|  clk_IBUF_BUFG    |                                      | clk1/clear                                   |                8 |             64 |
+| ~clk_6_25mhz_BUFG |                                      | display/spi_word[39]_i_1_n_0                 |               18 |             90 |
++-------------------+--------------------------------------+----------------------------------------------+------------------+----------------+
 
 

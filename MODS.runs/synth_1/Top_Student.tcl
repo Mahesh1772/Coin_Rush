@@ -22,24 +22,27 @@ create_project -in_memory -part xc7a35tcpg236-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.cache/wt [current_project]
-set_property parent.project_path C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.xpr [current_project]
+set_property webtalk.parent_dir D:/Aak242/Documents/EE2026/FPGA_EMODS/MODS.cache/wt [current_project]
+set_property parent.project_path D:/Aak242/Documents/EE2026/FPGA_EMODS/MODS.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.cache/ip [current_project]
+set_property ip_output_repo d:/Aak242/Documents/EE2026/FPGA_EMODS/MODS.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/imports/res/weights.coe
-add_files C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/imports/res/00.coe
+add_files D:/Aak242/Documents/EE2026/FPGA_EMODS/MODS.srcs/sources_1/imports/res/weights.coe
+add_files D:/Aak242/Documents/EE2026/FPGA_EMODS/MODS.srcs/sources_1/imports/res/00.coe
 read_verilog -library xil_defaultlib {
-  C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v
-  C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v
-  C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v
-  C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/flexible_clock.v
-  C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/hearts_display.v
-  C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/hearts_rom.v
-  C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/platforms.v
-  C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/walls_rom.v
-  C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/Top_Student.v
+  D:/Aak242/Documents/EE2026/FPGA_EMODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v
+  D:/Aak242/Documents/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v
+  D:/Aak242/Documents/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v
+  D:/Aak242/Documents/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/flexible_clock.v
+  D:/Aak242/Documents/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/hearts_display.v
+  D:/Aak242/Documents/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/hearts_rom.v
+  D:/Aak242/Documents/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/knight_sprite.v
+  D:/Aak242/Documents/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/platforms.v
+  D:/Aak242/Documents/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/walls_rom.v
+  D:/Aak242/Documents/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/yoshi_ghost_rom.v
+  D:/Aak242/Documents/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/yoshi_rom.v
+  D:/Aak242/Documents/EE2026/FPGA_EMODS/MODS.srcs/sources_1/new/Top_Student.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -49,8 +52,8 @@ read_verilog -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/constrs_1/new/constraints.xdc
-set_property used_in_implementation false [get_files C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/constrs_1/new/constraints.xdc]
+read_xdc D:/Aak242/Documents/EE2026/FPGA_EMODS/MODS.srcs/constrs_1/new/constraints.xdc
+set_property used_in_implementation false [get_files D:/Aak242/Documents/EE2026/FPGA_EMODS/MODS.srcs/constrs_1/new/constraints.xdc]
 
 set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]
