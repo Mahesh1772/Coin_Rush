@@ -21,9 +21,26 @@ module Top_Student (
     wire [15:0] background_pixel_data;
     wire [15:0] platform_pixel_data;
     wire [15:0] hearts_pixel_data; // Wire for hearts color data
+
+    // Wires for BCD values and score_on signal
+    wire [3:0] bcd3, bcd2, bcd1, bcd0;
+    wire score_on;
+
     wire platforms_on;
     wire hearts_on; // Signal to indicate when hearts are on
     
+    // Instantiate the binary to BCD conversion module
+binary2bcd bcd_unit (
+    .clk(clk),
+    .reset(0),
+    .start(1'b1), // Assuming start signal is always asserted
+    .in(14'd1234), // Set the input value to 1234
+    .bcd3(bcd3),
+    .bcd2(bcd2),
+    .bcd1(bcd1),
+    .bcd0(bcd0)
+);
+
     // Instantiate the background module
     background my_background (
         .clk(clk),
@@ -49,9 +66,22 @@ module Top_Student (
         .color_data(hearts_pixel_data),
         .hearts_on(hearts_on)
     );
+
+    // Instantiate the score_display module
+    score_display my_score (
+        .clk(clk),
+        .reset(0), // Assume reset is not asserted
+        .new_score(1'b1), // Assume new_score is not asserted
+    .score({bcd3, bcd2, bcd1, bcd0}), // Connect BCD outputs to score input
+        .pixel_index(oled_pixel_index),
+        .sseg(), // Ignore sseg and an outputs
+        .an(),
+        .score_on(score_on)
+    );
     
     // Combine the pixel data from background and platforms, and hearts
-        assign oled_pixel_data = hearts_on ? hearts_pixel_data :
+        assign oled_pixel_data = score_on ? 16'hFFFF :
+                            hearts_on ? hearts_pixel_data :
                             platforms_on ? platform_pixel_data :
                             background_pixel_data;
     

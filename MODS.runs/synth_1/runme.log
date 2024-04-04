@@ -14,38 +14,155 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 22772 
+INFO: Helper process launched with PID 20332 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 359.422 ; gain = 102.395
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 359.742 ; gain = 102.871
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Top_Student' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/Top_Student.v:3]
 	Parameter SCREEN_WIDTH bound to: 96 - type: integer 
 	Parameter SCREEN_HEIGHT bound to: 64 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'flexible_clock' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/flexible_clock.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'flexible_clock' (1#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/flexible_clock.v:23]
+INFO: [Synth 8-6157] synthesizing module 'binary2bcd' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/binary2bcd.v:3]
+	Parameter idle bound to: 1'b0 
+	Parameter convert bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'binary2bcd' (2#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/binary2bcd.v:3]
 INFO: [Synth 8-6157] synthesizing module 'background' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:23]
 INFO: [Synth 8-5534] Detected attribute (* rom_style = "block" *) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:33]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:43]
-INFO: [Synth 8-6155] done synthesizing module 'background' (2#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'background' (3#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:23]
 INFO: [Synth 8-6157] synthesizing module 'platforms' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/platforms.v:3]
 	Parameter SCREEN_WIDTH bound to: 96 - type: integer 
 	Parameter SCREEN_HEIGHT bound to: 64 - type: integer 
 	Parameter offset bound to: 4 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'walls_rom' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/walls_rom.v:61]
 INFO: [Synth 8-5534] Detected attribute (* rom_style = "block" *) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/walls_rom.v:71]
-INFO: [Synth 8-6155] done synthesizing module 'walls_rom' (3#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/walls_rom.v:61]
+INFO: [Synth 8-6155] done synthesizing module 'walls_rom' (4#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/walls_rom.v:61]
 INFO: [Synth 8-6157] synthesizing module 'blocks_rom' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:112]
 INFO: [Synth 8-5534] Detected attribute (* rom_style = "block" *) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:122]
-INFO: [Synth 8-6155] done synthesizing module 'blocks_rom' (4#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:112]
-INFO: [Synth 8-6155] done synthesizing module 'platforms' (5#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/platforms.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'blocks_rom' (5#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:112]
+INFO: [Synth 8-6155] done synthesizing module 'platforms' (6#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/platforms.v:3]
 INFO: [Synth 8-6157] synthesizing module 'hearts_display' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/hearts_display.v:3]
 	Parameter SCREEN_WIDTH bound to: 96 - type: integer 
 	Parameter SCREEN_HEIGHT bound to: 64 - type: integer 
 	Parameter HEART_HEIGHT bound to: 4 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'hearts_rom' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/hearts_rom.v:3]
 INFO: [Synth 8-5534] Detected attribute (* rom_style = "block" *) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/hearts_rom.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'hearts_rom' (6#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/hearts_rom.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'hearts_display' (7#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/hearts_display.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'hearts_rom' (7#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/hearts_rom.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'hearts_display' (8#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/hearts_display.v:3]
+INFO: [Synth 8-6157] synthesizing module 'score_display' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/score_display.v:3]
+	Parameter SCREEN_WIDTH bound to: 96 - type: integer 
+	Parameter SCREEN_HEIGHT bound to: 64 - type: integer 
+	Parameter SCORE_HEIGHT bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'numbers_rom' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:3]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "block" *) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:13]
+WARNING: [Synth 8-151] case item 10'b0100000000 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:280]
+WARNING: [Synth 8-151] case item 10'b0100000001 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:281]
+WARNING: [Synth 8-151] case item 10'b0100000010 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:282]
+WARNING: [Synth 8-151] case item 10'b0100000011 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:283]
+WARNING: [Synth 8-151] case item 10'b0100000100 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:284]
+WARNING: [Synth 8-151] case item 10'b0100000101 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:285]
+WARNING: [Synth 8-151] case item 10'b0100000110 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:286]
+WARNING: [Synth 8-151] case item 10'b0100000111 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:287]
+WARNING: [Synth 8-151] case item 10'b0100001000 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:288]
+WARNING: [Synth 8-151] case item 10'b0100001001 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:289]
+WARNING: [Synth 8-151] case item 10'b0100001010 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:290]
+WARNING: [Synth 8-151] case item 10'b0100001011 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:291]
+WARNING: [Synth 8-151] case item 10'b0100001100 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:292]
+WARNING: [Synth 8-151] case item 10'b0100001101 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:293]
+WARNING: [Synth 8-151] case item 10'b0100001110 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:294]
+WARNING: [Synth 8-151] case item 10'b0100001111 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:295]
+WARNING: [Synth 8-151] case item 10'b0100010000 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:296]
+WARNING: [Synth 8-151] case item 10'b0100010001 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:297]
+WARNING: [Synth 8-151] case item 10'b0100010010 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:298]
+WARNING: [Synth 8-151] case item 10'b0100010011 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:299]
+WARNING: [Synth 8-151] case item 10'b0100010100 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:300]
+WARNING: [Synth 8-151] case item 10'b0100010101 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:301]
+WARNING: [Synth 8-151] case item 10'b0100010110 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:302]
+WARNING: [Synth 8-151] case item 10'b0100010111 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:303]
+WARNING: [Synth 8-151] case item 10'b0100011000 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:304]
+WARNING: [Synth 8-151] case item 10'b0100011001 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:305]
+WARNING: [Synth 8-151] case item 10'b0100011010 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:306]
+WARNING: [Synth 8-151] case item 10'b0100011011 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:307]
+WARNING: [Synth 8-151] case item 10'b0100011100 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:308]
+WARNING: [Synth 8-151] case item 10'b0100011101 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:309]
+WARNING: [Synth 8-151] case item 10'b0100011110 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:310]
+WARNING: [Synth 8-151] case item 10'b0100011111 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:311]
+WARNING: [Synth 8-151] case item 10'b0100100000 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:312]
+WARNING: [Synth 8-151] case item 10'b0100100001 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:313]
+WARNING: [Synth 8-151] case item 10'b0100100010 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:314]
+WARNING: [Synth 8-151] case item 10'b0100100011 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:315]
+WARNING: [Synth 8-151] case item 10'b0100100100 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:316]
+WARNING: [Synth 8-151] case item 10'b0100100101 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:317]
+WARNING: [Synth 8-151] case item 10'b0100100110 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:318]
+WARNING: [Synth 8-151] case item 10'b0100100111 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:319]
+WARNING: [Synth 8-151] case item 10'b0100101000 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:320]
+WARNING: [Synth 8-151] case item 10'b0100101001 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:321]
+WARNING: [Synth 8-151] case item 10'b0100101010 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:322]
+WARNING: [Synth 8-151] case item 10'b0100101011 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:323]
+WARNING: [Synth 8-151] case item 10'b0100101100 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:324]
+WARNING: [Synth 8-151] case item 10'b0100101101 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:325]
+WARNING: [Synth 8-151] case item 10'b0100101110 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:326]
+WARNING: [Synth 8-151] case item 10'b0100101111 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:327]
+WARNING: [Synth 8-151] case item 10'b0100110000 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:328]
+WARNING: [Synth 8-151] case item 10'b0100110001 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:329]
+WARNING: [Synth 8-151] case item 10'b0100110010 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:330]
+WARNING: [Synth 8-151] case item 10'b0100110011 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:331]
+WARNING: [Synth 8-151] case item 10'b0100110100 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:332]
+WARNING: [Synth 8-151] case item 10'b0100110101 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:333]
+WARNING: [Synth 8-151] case item 10'b0100110110 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:334]
+WARNING: [Synth 8-151] case item 10'b0100110111 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:335]
+WARNING: [Synth 8-151] case item 10'b0100111000 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:336]
+WARNING: [Synth 8-151] case item 10'b0100111001 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:337]
+WARNING: [Synth 8-151] case item 10'b0100111010 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:338]
+WARNING: [Synth 8-151] case item 10'b0100111011 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:339]
+WARNING: [Synth 8-151] case item 10'b0100111100 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:340]
+WARNING: [Synth 8-151] case item 10'b0100111101 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:341]
+WARNING: [Synth 8-151] case item 10'b0100111110 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:342]
+WARNING: [Synth 8-151] case item 10'b0100111111 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:343]
+WARNING: [Synth 8-151] case item 10'b0101000000 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:344]
+WARNING: [Synth 8-151] case item 10'b0101000001 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:345]
+WARNING: [Synth 8-151] case item 10'b0101000010 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:346]
+WARNING: [Synth 8-151] case item 10'b0101000011 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:347]
+WARNING: [Synth 8-151] case item 10'b0101000100 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:348]
+WARNING: [Synth 8-151] case item 10'b0101000101 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:349]
+WARNING: [Synth 8-151] case item 10'b0101000110 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:350]
+WARNING: [Synth 8-151] case item 10'b0101000111 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:351]
+WARNING: [Synth 8-151] case item 10'b0101001000 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:352]
+WARNING: [Synth 8-151] case item 10'b0101001001 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:353]
+WARNING: [Synth 8-151] case item 10'b0101001010 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:354]
+WARNING: [Synth 8-151] case item 10'b0101001011 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:355]
+WARNING: [Synth 8-151] case item 10'b0101001100 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:356]
+WARNING: [Synth 8-151] case item 10'b0101001101 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:357]
+WARNING: [Synth 8-151] case item 10'b0101001110 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:358]
+WARNING: [Synth 8-151] case item 10'b0101001111 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:359]
+WARNING: [Synth 8-151] case item 10'b0101010000 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:360]
+WARNING: [Synth 8-151] case item 10'b0101010001 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:361]
+WARNING: [Synth 8-151] case item 10'b0101010010 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:362]
+WARNING: [Synth 8-151] case item 10'b0101010011 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:363]
+WARNING: [Synth 8-151] case item 10'b0101010100 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:364]
+WARNING: [Synth 8-151] case item 10'b0101010101 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:365]
+WARNING: [Synth 8-151] case item 10'b0101010110 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:366]
+WARNING: [Synth 8-151] case item 10'b0101010111 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:367]
+WARNING: [Synth 8-151] case item 10'b0101011000 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:368]
+WARNING: [Synth 8-151] case item 10'b0101011001 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:369]
+WARNING: [Synth 8-151] case item 10'b0101011010 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:370]
+WARNING: [Synth 8-151] case item 10'b0101011011 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:371]
+WARNING: [Synth 8-151] case item 10'b0101011100 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:372]
+WARNING: [Synth 8-151] case item 10'b0101011101 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:373]
+WARNING: [Synth 8-151] case item 10'b0101011110 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:374]
+WARNING: [Synth 8-151] case item 10'b0101011111 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:375]
+WARNING: [Synth 8-151] case item 10'b0101100000 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:376]
+WARNING: [Synth 8-151] case item 10'b0101100001 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:377]
+WARNING: [Synth 8-151] case item 10'b0101100010 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:378]
+WARNING: [Synth 8-151] case item 10'b0101100011 is unreachable [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:379]
+INFO: [Common 17-14] Message 'Synth 8-151' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6155] done synthesizing module 'numbers_rom' (9#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:3]
+WARNING: [Synth 8-689] width (8) of port connection 'row' does not match port width (3) of module 'numbers_rom' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/score_display.v:102]
+WARNING: [Synth 8-689] width (4) of port connection 'col' does not match port width (5) of module 'numbers_rom' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/score_display.v:102]
+WARNING: [Synth 8-689] width (1) of port connection 'color_data' does not match port width (16) of module 'numbers_rom' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/score_display.v:102]
+INFO: [Synth 8-6155] done synthesizing module 'score_display' (10#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/score_display.v:3]
+WARNING: [Synth 8-689] width (16) of port connection 'score' does not match port width (14) of module 'score_display' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/Top_Student.v:75]
 INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
 	Parameter Width bound to: 96 - type: integer 
 	Parameter Height bound to: 64 - type: integer 
@@ -100,11 +217,11 @@ INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/Users/bsiva/Desktop/
 INFO: [Synth 8-226] default block is never used [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:123]
 INFO: [Synth 8-226] default block is never used [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:198]
 WARNING: [Synth 8-693] zero replication count - replication ignored [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:346]
-INFO: [Synth 8-6155] done synthesizing module 'Oled_Display' (8#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
-INFO: [Synth 8-6155] done synthesizing module 'Top_Student' (9#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/Top_Student.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'Oled_Display' (11#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
+INFO: [Synth 8-6155] done synthesizing module 'Top_Student' (12#1) [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/Top_Student.v:3]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port JC[2]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 434.828 ; gain = 177.801
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 436.742 ; gain = 179.871
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -117,10 +234,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 434.828 ; gain = 177.801
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 436.742 ; gain = 179.871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 434.828 ; gain = 177.801
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 436.742 ; gain = 179.871
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -138,28 +255,33 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 747.676 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 756.926 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 747.676 ; gain = 490.648
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 756.926 ; gain = 500.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 747.676 ; gain = 490.648
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 756.926 ; gain = 500.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 747.676 ; gain = 490.648
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 756.926 ; gain = 500.055
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "slow_clk0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 WARNING: [Synth 8-6014] Unused sequential element row_reg_reg was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:38]
 WARNING: [Synth 8-6014] Unused sequential element col_reg_reg was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:39]
 WARNING: [Synth 8-6014] Unused sequential element  was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:43]
 WARNING: [Synth 8-6014] Unused sequential element  was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:43]
+WARNING: [Synth 8-6014] Unused sequential element row_reg_reg was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:18]
+WARNING: [Synth 8-6014] Unused sequential element col_reg_reg was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:19]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:23]
+INFO: [Synth 8-5544] ROM "sseg" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "an" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Oled_Display'
 INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "fsm_next_state0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
@@ -203,7 +325,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'color_data_reg' [C:/Users/b
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Oled_Display'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 747.676 ; gain = 490.648
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:29 . Memory (MB): peak = 756.926 ; gain = 500.055
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -218,33 +340,42 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     17 Bit       Adders := 1     
 	   2 Input      6 Bit       Adders := 1     
-	   2 Input      3 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 12    
+	   2 Input      3 Bit       Adders := 3     
+	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
 	               40 Bit    Registers := 1     
 	               17 Bit    Registers := 1     
+	               14 Bit    Registers := 2     
 	               13 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
 	                6 Bit    Registers := 1     
+	                4 Bit    Registers := 11    
 	                3 Bit    Registers := 1     
 	                2 Bit    Registers := 5     
-	                1 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
 +---ROMs : 
-	                              ROMs := 2     
+	                              ROMs := 3     
 +---Muxes : 
 	   2 Input     40 Bit        Muxes := 3     
 	  32 Input     32 Bit        Muxes := 1     
 	   2 Input     32 Bit        Muxes := 2     
 	  32 Input     20 Bit        Muxes := 1     
 	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 16    
+	   2 Input     16 Bit        Muxes := 17    
 	  16 Input     15 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 2     
 	  32 Input      6 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 2     
 	  32 Input      5 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 6     
+	   2 Input      4 Bit        Muxes := 16    
+	   4 Input      4 Bit        Muxes := 2     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 8     
 	   8 Input      2 Bit        Muxes := 2     
 	   2 Input      2 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 19    
+	   2 Input      1 Bit        Muxes := 31    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -255,13 +386,27 @@ Hierarchical RTL Component report
 Module Top_Student 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 3     
 Module flexible_clock 
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 1     
+Module binary2bcd 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 5     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               14 Bit    Registers := 1     
+	                4 Bit    Registers := 5     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     14 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 8     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
 Module background 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -293,10 +438,27 @@ Module hearts_display
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
 +---Muxes : 
 	   2 Input      3 Bit        Muxes := 6     
 	   2 Input      2 Bit        Muxes := 3     
 	   2 Input      1 Bit        Muxes := 4     
+Module numbers_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---ROMs : 
+	                              ROMs := 1     
+Module score_display 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 2     
++---Registers : 
+	                4 Bit    Registers := 1     
++---Muxes : 
+	   4 Input      4 Bit        Muxes := 2     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
 Module Oled_Display 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -333,48 +495,116 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-4471] merging register 'my_platforms/blocks_unit/col_reg_reg[1:0]' into 'my_platforms/walls_unit/col_reg_reg[1:0]' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:128]
-INFO: [Synth 8-4471] merging register 'my_platforms/blocks_unit/row_reg_reg[1:0]' into 'my_platforms/walls_unit/row_reg_reg[1:0]' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:127]
+INFO: [Synth 8-5545] ROM "slow_clk0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-4471] merging register 'blocks_unit/col_reg_reg[1:0]' into 'walls_unit/col_reg_reg[1:0]' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:128]
+INFO: [Synth 8-4471] merging register 'blocks_unit/row_reg_reg[1:0]' into 'walls_unit/row_reg_reg[1:0]' [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:127]
+WARNING: [Synth 8-6014] Unused sequential element blocks_unit/col_reg_reg was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:128]
+WARNING: [Synth 8-6014] Unused sequential element blocks_unit/row_reg_reg was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:127]
+WARNING: [Synth 8-6014] Unused sequential element sel was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/numbers_rom.v:23]
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
 WARNING: [Synth 8-6014] Unused sequential element sel was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:43]
-WARNING: [Synth 8-6014] Unused sequential element my_platforms/blocks_unit/col_reg_reg was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:128]
-WARNING: [Synth 8-6014] Unused sequential element my_platforms/blocks_unit/row_reg_reg was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/blocks_rom.v:127]
-INFO: [Synth 8-5546] ROM "display/fsm_next_state0" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5545] ROM "clk1/slow_clk0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5546] ROM "display/fsm_next_state0" won't be mapped to RAM because it is too sparse
 WARNING: [Synth 8-6014] Unused sequential element sel was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:43]
 WARNING: [Synth 8-6014] Unused sequential element sel_rep was removed.  [C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.srcs/sources_1/new/background.v:43]
-WARNING: [Synth 8-3917] design Top_Student has port JC[7] driven by constant 1
 WARNING: [Synth 8-3331] design Top_Student has unconnected port JC[2]
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/state_reg_reg) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/bcd_3_reg_reg[3]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/bcd_3_reg_reg[2]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/bcd_3_reg_reg[1]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/bcd_3_reg_reg[0]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/input_reg_reg[13]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/input_reg_reg[12]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/input_reg_reg[11]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/input_reg_reg[10]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/input_reg_reg[9]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/input_reg_reg[8]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/input_reg_reg[7]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/input_reg_reg[6]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/input_reg_reg[5]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/input_reg_reg[4]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/input_reg_reg[3]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/input_reg_reg[2]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/input_reg_reg[1]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/input_reg_reg[0]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/bcd_0_reg_reg[3]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/bcd_0_reg_reg[2]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/bcd_0_reg_reg[1]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/bcd_0_reg_reg[0]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/bcd_1_reg_reg[3]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/bcd_1_reg_reg[2]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/bcd_1_reg_reg[1]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/bcd_1_reg_reg[0]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/bcd_2_reg_reg[3]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/bcd_2_reg_reg[2]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/bcd_2_reg_reg[1]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (bcd_unit/bcd_2_reg_reg[0]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/state_reg_reg) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/bcd_3_reg_reg[3]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/bcd_3_reg_reg[2]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/bcd_3_reg_reg[1]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/bcd_3_reg_reg[0]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/input_reg_reg[13]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/input_reg_reg[12]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/input_reg_reg[11]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/input_reg_reg[10]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/input_reg_reg[9]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/input_reg_reg[8]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/input_reg_reg[7]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/input_reg_reg[6]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/input_reg_reg[5]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/input_reg_reg[4]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/input_reg_reg[3]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/input_reg_reg[2]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/input_reg_reg[1]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/input_reg_reg[0]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/bcd_0_reg_reg[3]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/bcd_0_reg_reg[2]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/bcd_0_reg_reg[1]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/bcd_0_reg_reg[0]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/bcd_1_reg_reg[3]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/bcd_1_reg_reg[2]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/bcd_1_reg_reg[1]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/bcd_1_reg_reg[0]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/bcd_2_reg_reg[3]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/bcd_2_reg_reg[2]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/bcd_2_reg_reg[1]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/bcd_unit/bcd_2_reg_reg[0]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/decode_reg_reg[3]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/decode_reg_reg[2]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/decode_reg_reg[1]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (my_score/decode_reg_reg[0]) is unused and will be removed from module Top_Student.
 WARNING: [Synth 8-3332] Sequential element (my_platforms/walls_unit/col_reg_reg[1]) is unused and will be removed from module Top_Student.
 WARNING: [Synth 8-3332] Sequential element (my_platforms/walls_unit/col_reg_reg[0]) is unused and will be removed from module Top_Student.
 WARNING: [Synth 8-3332] Sequential element (my_platforms/walls_unit/row_reg_reg[0]) is unused and will be removed from module Top_Student.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 747.676 ; gain = 490.648
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:48 . Memory (MB): peak = 756.926 ; gain = 500.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 ROM:
-+------------+--------------------------------------+---------------+----------------+
-|Module Name | RTL Object                           | Depth x Width | Implemented As | 
-+------------+--------------------------------------+---------------+----------------+
-|background  | color_data                           | 8192x16       | Block RAM      | 
-|background  | color_data                           | 8192x1        | Block RAM      | 
-|hearts_rom  | color_data                           | 32x16         | LUT            | 
-|Top_Student | sel_rep                              | 8192x16       | Block RAM      | 
-|Top_Student | sel                                  | 8192x1        | Block RAM      | 
-|Top_Student | my_hearts/hearts_rom_unit/color_data | 32x16         | LUT            | 
-+------------+--------------------------------------+---------------+----------------+
++---------------+----------------------------+---------------+----------------+
+|Module Name    | RTL Object                 | Depth x Width | Implemented As | 
++---------------+----------------------------+---------------+----------------+
+|background     | color_data                 | 8192x16       | Block RAM      | 
+|background     | color_data                 | 8192x1        | Block RAM      | 
+|hearts_rom     | color_data                 | 32x16         | LUT            | 
+|numbers_rom    | color_data                 | 256x16        | Block RAM      | 
+|hearts_display | hearts_rom_unit/color_data | 32x16         | LUT            | 
+|Top_Student    | sel_rep                    | 8192x16       | Block RAM      | 
+|Top_Student    | sel                        | 8192x1        | Block RAM      | 
++---------------+----------------------------+---------------+----------------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4480] The timing for the instance i_0/sel_rep_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_0/sel_rep_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_0/sel_rep_2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_0/sel_rep_3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_1/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_1/my_score/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_2/sel_rep_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_2/sel_rep_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_2/sel_rep_2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_2/sel_rep_3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_3/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -385,13 +615,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:00:50 . Memory (MB): peak = 757.000 ; gain = 499.973
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:56 . Memory (MB): peak = 758.547 ; gain = 501.676
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:00:50 . Memory (MB): peak = 776.812 ; gain = 519.785
+Finished Timing Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:00:56 . Memory (MB): peak = 778.695 ; gain = 521.824
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -402,13 +632,14 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance my_score/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance sel_rep_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance sel_rep_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance sel_rep_2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance sel_rep_3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:44 ; elapsed = 00:00:50 . Memory (MB): peak = 789.914 ; gain = 532.887
+Finished Technology Mapping : Time (s): cpu = 00:00:42 ; elapsed = 00:00:57 . Memory (MB): peak = 793.926 ; gain = 537.055
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -432,7 +663,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:45 ; elapsed = 00:00:51 . Memory (MB): peak = 789.914 ; gain = 532.887
+Finished IO Insertion : Time (s): cpu = 00:00:43 ; elapsed = 00:00:57 . Memory (MB): peak = 793.926 ; gain = 537.055
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -445,7 +676,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:45 ; elapsed = 00:00:51 . Memory (MB): peak = 789.914 ; gain = 532.887
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:43 ; elapsed = 00:00:57 . Memory (MB): peak = 793.926 ; gain = 537.055
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -457,25 +688,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:45 ; elapsed = 00:00:51 . Memory (MB): peak = 789.914 ; gain = 532.887
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:43 ; elapsed = 00:00:58 . Memory (MB): peak = 793.926 ; gain = 537.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:45 ; elapsed = 00:00:51 . Memory (MB): peak = 789.914 ; gain = 532.887
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:43 ; elapsed = 00:00:58 . Memory (MB): peak = 793.926 ; gain = 537.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:45 ; elapsed = 00:00:51 . Memory (MB): peak = 789.914 ; gain = 532.887
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:43 ; elapsed = 00:00:58 . Memory (MB): peak = 793.926 ; gain = 537.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:45 ; elapsed = 00:00:51 . Memory (MB): peak = 789.914 ; gain = 532.887
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:43 ; elapsed = 00:00:58 . Memory (MB): peak = 793.926 ; gain = 537.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -492,48 +723,50 @@ Report Cell Usage:
 |      |Cell       |Count |
 +------+-----------+------+
 |1     |BUFG       |     2|
-|2     |CARRY4     |    33|
-|3     |LUT1       |    20|
-|4     |LUT2       |    71|
-|5     |LUT3       |    48|
-|6     |LUT4       |    54|
-|7     |LUT5       |    48|
-|8     |LUT6       |   122|
+|2     |CARRY4     |    68|
+|3     |LUT1       |    26|
+|4     |LUT2       |   135|
+|5     |LUT3       |   106|
+|6     |LUT4       |    74|
+|7     |LUT5       |    82|
+|8     |LUT6       |   171|
 |9     |MUXF7      |     1|
 |10    |RAMB18E1   |     1|
-|11    |RAMB36E1   |     1|
-|12    |RAMB36E1_1 |     1|
-|13    |RAMB36E1_2 |     1|
-|14    |RAMB36E1_3 |     1|
-|15    |FDE_1      |    32|
-|16    |FDRE       |   122|
-|17    |LD         |    16|
-|18    |IBUF       |     1|
-|19    |OBUF       |     7|
-|20    |OBUFT      |     1|
+|11    |RAMB18E1_1 |     1|
+|12    |RAMB36E1   |     1|
+|13    |RAMB36E1_1 |     1|
+|14    |RAMB36E1_2 |     1|
+|15    |RAMB36E1_3 |     1|
+|16    |FDE_1      |    32|
+|17    |FDRE       |   122|
+|18    |LD         |    16|
+|19    |IBUF       |     1|
+|20    |OBUF       |     7|
+|21    |OBUFT      |     1|
 +------+-----------+------+
 
 Report Instance Areas: 
 +------+--------------------+---------------+------+
 |      |Instance            |Module         |Cells |
 +------+--------------------+---------------+------+
-|1     |top                 |               |   583|
-|2     |  clk1              |flexible_clock |    52|
-|3     |  display           |Oled_Display   |   420|
+|1     |top                 |               |   850|
+|2     |  clk1              |flexible_clock |    63|
+|3     |  display           |Oled_Display   |   599|
 |4     |  my_background     |background     |    16|
-|5     |  my_hearts         |hearts_display |    25|
-|6     |    hearts_rom_unit |hearts_rom     |    25|
-|7     |  my_platforms      |platforms      |    53|
-|8     |    walls_unit      |walls_rom      |     8|
+|5     |  my_hearts         |hearts_display |    74|
+|6     |    hearts_rom_unit |hearts_rom     |    55|
+|7     |  my_platforms      |platforms      |    43|
+|8     |    walls_unit      |walls_rom      |    13|
+|9     |  my_score          |score_display  |    38|
 +------+--------------------+---------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:45 ; elapsed = 00:00:51 . Memory (MB): peak = 789.914 ; gain = 532.887
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:43 ; elapsed = 00:00:58 . Memory (MB): peak = 793.926 ; gain = 537.055
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 15 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:38 ; elapsed = 00:00:45 . Memory (MB): peak = 789.914 ; gain = 220.039
-Synthesis Optimization Complete : Time (s): cpu = 00:00:45 ; elapsed = 00:00:51 . Memory (MB): peak = 789.914 ; gain = 532.887
+Synthesis finished with 0 errors, 0 critical warnings and 84 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:36 ; elapsed = 00:00:51 . Memory (MB): peak = 793.926 ; gain = 216.871
+Synthesis Optimization Complete : Time (s): cpu = 00:00:43 ; elapsed = 00:00:58 . Memory (MB): peak = 793.926 ; gain = 537.055
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 88 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 124 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -543,11 +776,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   LD => LDCE: 16 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-58 Infos, 17 Warnings, 2 Critical Warnings and 0 Errors encountered.
+70 Infos, 190 Warnings, 2 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:47 ; elapsed = 00:00:53 . Memory (MB): peak = 789.914 ; gain = 545.668
+synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:01:00 . Memory (MB): peak = 793.926 ; gain = 550.066
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/MODS.runs/synth_1/Top_Student.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Top_Student_utilization_synth.rpt -pb Top_Student_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 789.914 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sun Mar 31 09:23:26 2024...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 793.926 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Apr  4 16:20:49 2024...

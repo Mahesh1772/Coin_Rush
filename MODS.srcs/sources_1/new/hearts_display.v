@@ -31,39 +31,72 @@ module hearts_display(
         col = 0;
         hearts_on = 0;
 
-        // if vga pixel within heart 1 (left)
-    	if(x >= 48 && x < 52 && y>=4 && y < 8) begin
-    		col = x - 48;                     // set col index
-    		if(num_hearts > 0)                 // if num_hearts > 0 (1,2,3) left heart is on
-    			row = y - HEART_HEIGHT;                  // set full heart
-    		else 
-    			row = y;                       // else set empty heart
-    		if(color_data != 16'hFFFF) // if color_data != sprite background color
-    			hearts_on = 1;                 // assert hearts_on signal
-    	end
+        // // if vga pixel within heart 1 (left)
+    	// if(x >= 48 && x < 52 && y>=4 && y < 8) begin
+    	// 	col = x - 48;                     // set col index
+    	// 	if(num_hearts > 0)                 // if num_hearts > 0 (1,2,3) left heart is on
+    	// 		row = y - HEART_HEIGHT;                  // set full heart
+    	// 	else 
+    	// 		row = y;                       // else set empty heart
+    	// 	if(color_data != 16'hFFFF) // if color_data != sprite background color
+    	// 		hearts_on = 1;                 // assert hearts_on signal
+    	// end
 
-    	// if vga pixel within heart 2 (center)
-    	if(x >= 52 && x < 56 && y>=4 && y < 8) begin
-    		col = x - 52;                     // set col index
-    		if(num_hearts > 1)                 // if num_hearts > 1 (2,3) middle heart is on
-    			row = y - HEART_HEIGHT;                  // set full heart
-    		else 
-    			row = y;                       // else set empty heart
-    		if(color_data != 16'hFFFF) // if color_data != sprite background color
-    			hearts_on = 1;                 // assert hearts_on signal
-    	end
+    	// // if vga pixel within heart 2 (center)
+    	// if(x >= 52 && x < 56 && y>=4 && y < 8) begin
+    	// 	col = x - 52;                     // set col index
+    	// 	if(num_hearts > 1)                 // if num_hearts > 1 (2,3) middle heart is on
+    	// 		row = y - HEART_HEIGHT;                  // set full heart
+    	// 	else 
+    	// 		row = y;                       // else set empty heart
+    	// 	if(color_data != 16'hFFFF) // if color_data != sprite background color
+    	// 		hearts_on = 1;                 // assert hearts_on signal
+    	// end
 
 
-    	// if vga pixel within beart 3 (right)
-    	if(x >= 56 && x < 60 && y>=4 && y < 8) begin
-    		col = x - 56;                     // set col index
-    		if(num_hearts > 2)                 // if num_hearts > 2 (3)right heart is on
-    			row = y - HEART_HEIGHT;                  // set full heart
-    		else 
-    			row = y;                       // else set empty heart
-    		if(color_data != 16'hFFFF) // if color_data != sprite background color
-    			hearts_on = 1;                 // assert hearts_on signal
-    	end
+    	// // if vga pixel within beart 3 (right)
+    	// if(x >= 56 && x < 60 && y>=4 && y < 8) begin
+    	// 	col = x - 56;                     // set col index
+    	// 	if(num_hearts > 2)                 // if num_hearts > 2 (3)right heart is on
+    	// 		row = y - HEART_HEIGHT;                  // set full heart
+    	// 	else 
+    	// 		row = y;                       // else set empty heart
+    	// 	if(color_data != 16'hFFFF) // if color_data != sprite background color
+    	// 		hearts_on = 1;                 // assert hearts_on signal
+    	// end
+
+		// if vga pixel within heart 1 (left)
+    if(x >= 33 && x < 37 && y>=4 && y < 8) begin
+        col = x - 33; // set col index
+        if(num_hearts > 0) // if num_hearts > 0 (1,2,3) left heart is on
+            row = y - HEART_HEIGHT; // set full heart
+        else
+            row = y; // else set empty heart
+        if(color_data != 16'hFFFF) // if color_data != sprite background color
+            hearts_on = 1; // assert hearts_on signal
+    end
+
+    // if vga pixel within heart 2 (center)
+    if(x >= 37 && x < 41 && y>=4 && y < 8) begin
+        col = x - 37; // set col index
+        if(num_hearts > 1) // if num_hearts > 1 (2,3) middle heart is on
+            row = y - HEART_HEIGHT; // set full heart
+        else
+            row = y; // else set empty heart
+        if(color_data != 16'hFFFF) // if color_data != sprite background color
+            hearts_on = 1; // assert hearts_on signal
+    end
+
+    // if vga pixel within heart 3 (right)
+    if(x >= 41 && x < 45 && y>=4 && y < 8) begin
+        col = x - 41; // set col index
+        if(num_hearts > 2) // if num_hearts > 2 (3) right heart is on
+            row = y - HEART_HEIGHT; // set full heart
+        else
+            row = y; // else set empty heart
+        if(color_data != 16'hFFFF) // if color_data != sprite background color
+            hearts_on = 1; // assert hearts_on signal
+    end
 
     end
 
