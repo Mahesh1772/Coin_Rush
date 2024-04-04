@@ -3,6 +3,7 @@
 module Top_Student (
     input clk,
     input [15:0] sw,
+    input sw14,
     output [3:0] an,
     output [6:0] seg,
     output [12:10] led,
@@ -57,7 +58,7 @@ module Top_Student (
     wire [6:0] seg_wire;
     wire [2:0] led_wire;
     
-    mini_game play_mini_game (clk, sw, an_wire, seg_wire, led_wire);
+    mini_game play_mini_game (clk, sw, sw14, an_wire, seg_wire, led_wire);
     
     assign an = an_wire;
     assign seg = seg_wire;

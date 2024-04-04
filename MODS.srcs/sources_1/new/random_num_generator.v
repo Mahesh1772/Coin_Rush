@@ -29,18 +29,18 @@ module random_number_generator(
     );
     
     reg [3:0] random_num = 0;
-    reg [31:0] two_sec_count = 0;
+    reg [31:0] gen_interval = 0;
     wire [3:0] an_wire;
     wire [6:0] seg_wire;
     
     reg [15:0] lfsr_state = 16'b1010_0101_1010_0101;  // seed
      
     always @ (posedge clk) begin
-        two_sec_count = two_sec_count + 1;
-        if (two_sec_count == 199999999) begin
+        gen_interval = gen_interval + 1;
+        if (gen_interval == 199999999) begin
             lfsr_state = {lfsr_state[14:0], lfsr_state[0] ^ lfsr_state[2] ^ lfsr_state[3] ^ lfsr_state[5]};
             random_num = lfsr_state[3:0];
-            two_sec_count = 0;
+            gen_interval = 0;
         end
     end
     
