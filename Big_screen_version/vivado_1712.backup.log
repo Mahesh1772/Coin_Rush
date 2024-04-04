@@ -1,0 +1,73 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Apr  4 20:26:32 2024
+# Process ID: 1712
+# Current directory: D:/Aak242/Documents/EE2026/yoshi_main
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent19728 D:\Aak242\Documents\EE2026\yoshi_main\yoshi_main.xpr
+# Log file: D:/Aak242/Documents/EE2026/yoshi_main/vivado.log
+# Journal file: D:/Aak242/Documents/EE2026/yoshi_main\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 797.012 ; gain = 64.941
+update_compile_order -fileset sources_1
+file mkdir D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new
+close [ open D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/test.v w ]
+add_files D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/test.v
+update_compile_order -fileset sources_1
+add_files -norecurse {D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/ghost_crazy_rom.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/score_display.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/binary2bcd.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/ghost_crazy.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/vga_sync.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/gameover_display.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/background_ghost_rom.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/display_top.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/game_logo_display.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/ghost_normal_rom.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/walls_rom.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/hearts_rom.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/ghost_bottom.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/blocks_rom.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/yoshi_sprite.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/platforms.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/yoshi_rom.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/enemy_collision.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/nes_controller.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/numbers_rom.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/ghost_top.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/eggs_rom.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/yoshi_ghost_rom.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/grounded.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/eggs.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/game_state_machine.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/game_logo_rom.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/hearts_display.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/gameover_rom.v}
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/background_ghost_rom.v] -no_script -reset -force -quiet
+remove_files  D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/background_ghost_rom.v
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/binary2bcd.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/blocks_rom.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/display_top.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/eggs.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/eggs_rom.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/enemy_collision.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/game_logo_display.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/game_logo_rom.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/game_state_machine.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/gameover_display.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/gameover_rom.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/ghost_bottom.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/ghost_crazy.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/ghost_crazy_rom.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/ghost_normal_rom.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/ghost_top.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/grounded.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/hearts_display.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/hearts_rom.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/nes_controller.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/numbers_rom.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/platforms.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/score_display.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/test.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/vga_sync.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/walls_rom.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/yoshi_ghost_rom.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/yoshi_rom.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/yoshi_sprite.v] -no_script -reset -force -quiet
+remove_files  {D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/binary2bcd.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/blocks_rom.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/display_top.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/eggs.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/eggs_rom.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/enemy_collision.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/game_logo_display.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/game_logo_rom.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/game_state_machine.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/gameover_display.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/gameover_rom.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/ghost_bottom.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/ghost_crazy.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/ghost_crazy_rom.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/ghost_normal_rom.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/ghost_top.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/grounded.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/hearts_display.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/hearts_rom.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/nes_controller.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/numbers_rom.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/platforms.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/score_display.v D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/test.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/vga_sync.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/walls_rom.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/yoshi_ghost_rom.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/yoshi_rom.v D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/yoshi_sprite.v}
+add_files -fileset constrs_1 -norecurse D:/Aak242/Documents/EE2026/yoshi_main/yoshi_main.srcs/sources_1/new/basys3.xdc
+export_ip_user_files -of_objects  [get_files D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/basys3.xdc] -no_script -reset -force -quiet
+remove_files  -fileset constrs_1 D:/Aak242/Documents/CG2271/Yoshis-Nightmare/source/basys3.xdc
+archive_project D:/Aak242/Documents/EE2026/yoshi_main.xpr.zip -temp_dir D:/Aak242/Documents/EE2026/yoshi_main/.Xil/Vivado-1712-Aak242 -force -include_local_ip_cache -include_config_settings
+INFO: [Coretcl 2-137] starting archive...
+INFO: [Coretcl 2-1499] Saving project copy to temporary location 'D:/Aak242/Documents/EE2026/yoshi_main/.Xil/Vivado-1712-Aak242' for archiving project
+Scanning sources...
+Finished scanning sources
+INFO: [Coretcl 2-1211] Creating project copy for archival...
+INFO: [Coretcl 2-1213] Including run results for 'synth_1'
+INFO: [Coretcl 2-1213] Including run results for 'impl_1'
+INFO: [Coretcl 2-1212] Importing remotely added design sources and verilog include files (if any)...
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'constrs_1'
+INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'sources_1'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Apr  4 21:32:52 2024
+# Process ID: 25832
+# Current directory: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/yoshi_main/yoshi_main.runs/impl_1
+# Command line: vivado.exe -log display_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source display_top.tcl -notrace
+# Log file: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/yoshi_main/yoshi_main.runs/impl_1/display_top.vdi
+# Journal file: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/yoshi_main/yoshi_main.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source display_top.tcl -notrace
