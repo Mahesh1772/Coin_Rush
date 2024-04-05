@@ -165,7 +165,7 @@ module ghost_top
 					
     // assert output on signal when vga x/y pixels are within sprite
     // and location rgb value isn't sprite background color
-    assign ghost_top_on = ghost_on && rgb_out != 12'b011011011110 ? 1 : 0;
+    assign ghost_top_on = ghost_on && rgb_out != 12'hFFF ? 1 : 0;
 	
     // route color_data out
     assign rgb_out = color_data;

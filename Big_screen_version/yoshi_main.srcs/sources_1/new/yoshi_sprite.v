@@ -4,14 +4,14 @@ module yoshi_sprite
         input wire btnU, btnL, btnR, // inputs used to move sprite across screen
         input wire video_on,         // input from vga_sync signaling when video signal is on
         input wire [9:0] x, y,       // current pixel coordinates from vga_sync circuit
-	input wire grounded,         // input signal conveying when Yoshi is grounded on a platform
-	input wire game_over_yoshi,  // input signal conveying when game state is gameover
-	input wire collision,        // input signal conveying when yoshi collides with ghost
+	    input wire grounded,         // input signal conveying when Yoshi is grounded on a platform
+	    input wire game_over_yoshi,  // input signal conveying when game state is gameover
+	    input wire collision,        // input signal conveying when yoshi collides with ghost
         output reg [11:0] rgb_out,   // output rgb signal for current yoshi pixel
         output reg yoshi_on,         // output signal asserted when input x/y are within yoshi sprite in display area
         output wire [9:0] y_x, y_y,  // output signals for yoshi sprite's current location within display area
-	output wire jumping_up,      // output signal asserted when yoshi is jumping up
-	output wire direction        // output signal conveying yoshi's direction of motion
+	    output wire jumping_up,      // output signal asserted when yoshi is jumping up
+	    output wire direction        // output signal conveying yoshi's direction of motion
     );
    
     // constant declarations
@@ -25,10 +25,10 @@ module yoshi_sprite
     localparam T_H = 16;
    
     // maximum x dimension for combines tiles of yoshi (see diagram)
-    localparam X_MAX = 25;
+    localparam X_MAX = 16;
    
     // difference in head and torso tile placement in x dimension (see diagram)
-    localparam X_D = 9;
+    localparam X_D = 0;
    
     /***********************************************************************************/
     /*                           sprite location registers                             */  

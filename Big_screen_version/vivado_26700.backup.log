@@ -1,0 +1,32 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Fri Apr  5 08:14:50 2024
+# Process ID: 26700
+# Current directory: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22620 C:\Users\bsiva\Desktop\mahesh\University\SEM_4\CG2026\FPGA_EMODS\Big_screen_version\yoshi_main.xpr
+# Log file: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/vivado.log
+# Journal file: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.xpr
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version'
+INFO: [Project 1-313] Project file moved from 'C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/yoshi_main' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 865.703 ; gain = 136.133
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Fri Apr  5 09:08:31 2024] Launched synth_1...
+Run output will be captured here: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.runs/synth_1/runme.log
+[Fri Apr  5 09:08:31 2024] Launched impl_1...
+Run output will be captured here: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.runs/impl_1/runme.log
+reset_run synth_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Apr  5 10:55:01 2024...

@@ -68,12 +68,12 @@ set rc [catch {
   create_project -in_memory -part xc7a35tcpg236-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/yoshi_main/yoshi_main.cache/wt [current_project]
-  set_property parent.project_path C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/yoshi_main/yoshi_main.xpr [current_project]
-  set_property ip_output_repo C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/yoshi_main/yoshi_main.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.cache/wt [current_project]
+  set_property parent.project_path C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.xpr [current_project]
+  set_property ip_output_repo C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/yoshi_main/yoshi_main.runs/synth_1/display_top.dcp
-  read_xdc C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/yoshi_main/yoshi_main.srcs/constrs_1/imports/new/basys3.xdc
+  add_files -quiet C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.runs/synth_1/display_top.dcp
+  read_xdc C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/constrs_1/imports/new/basys3.xdc
   link_design -top display_top -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]

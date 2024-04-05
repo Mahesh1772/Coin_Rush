@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/yoshi_main/yoshi_main.srcs/constrs_1/imports/new/basys3.xdc rfile:../../../yoshi_main.srcs/constrs_1/imports/new/basys3.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/constrs_1/imports/new/basys3.xdc rfile:../../../yoshi_main.srcs/constrs_1/imports/new/basys3.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN W5 [get_ports clk]
 set_property src_info {type:XDC file:1 line:13 export:INPUT save:INPUT read:READ} [current_design]

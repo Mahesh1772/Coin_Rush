@@ -154,7 +154,7 @@ module ghost_crazy
 	
     // assert output on signal when VGA x/y pixels are within sprite
     // and location rgb value isn't sprite background color
-    assign ghost_crazy_on = ghost_on && color_data != 12'b011011011110 ? 1 : 0;
+    assign ghost_crazy_on = ghost_on && color_data != 12'b111111111111 ? 1 : 0;
 	
     // route color_data out
     assign rgb_out = color_data; 

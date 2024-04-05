@@ -235,5 +235,5 @@ module eggs
    
     // signal asserted when x/y vga pixel values are within sprite in current location
     assign eggs_on = (x >= egg_x_reg && x < egg_x_reg + 16 && y >= egg_y_reg && y < egg_y_reg + 16)
-                     && (rgb_out != 12'b011011011110) ? 1 : 0;                    
+                     && (rgb_out != 12'hFFF) ? 1 : 0;                    
 endmodule

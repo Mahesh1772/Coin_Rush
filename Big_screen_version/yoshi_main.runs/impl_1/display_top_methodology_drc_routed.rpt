@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Thu Apr  4 21:34:28 2024
+| Date         : Fri Apr  5 14:07:02 2024
 | Host         : LAPTOP-O0D571VU running 64-bit major release  (build 9200)
 | Command      : report_methodology -file display_top_methodology_drc_routed.rpt -pb display_top_methodology_drc_routed.pb -rpx display_top_methodology_drc_routed.rpx
 | Design       : display_top
@@ -23,15 +23,15 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 99
-+-----------+----------+--------------------------------------------+------------+
-| Rule      | Severity | Description                                | Violations |
-+-----------+----------+--------------------------------------------+------------+
-| LUTAR-1   | Warning  | LUT drives async reset alert               | 6          |
-| SYNTH-6   | Warning  | Timing of a block RAM might be sub-optimal | 2          |
-| TIMING-17 | Warning  | Non-clocked sequential cell                | 60         |
-| TIMING-18 | Warning  | Missing input or output delay              | 31         |
-+-----------+----------+--------------------------------------------+------------+
+             Violations found: 133
++-----------+----------+-------------------------------+------------+
+| Rule      | Severity | Description                   | Violations |
++-----------+----------+-------------------------------+------------+
+| LUTAR-1   | Warning  | LUT drives async reset alert  | 6          |
+| TIMING-17 | Warning  | Non-clocked sequential cell   | 60         |
+| TIMING-18 | Warning  | Missing input or output delay | 31         |
+| TIMING-20 | Warning  | Non-clocked latch             | 36         |
++-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -42,37 +42,27 @@ Related violations: <none>
 
 LUTAR-1#2 Warning
 LUT drives async reset alert  
-LUT cell game_FSM/FSM_sequential_state_reg_y[2]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) eggs_unit/FSM_sequential_state_reg_reg/CLR, eggs_unit/egg_type_reg_reg[3]/CLR, eggs_unit/egg_type_reg_reg[5]/CLR, eggs_unit/egg_x_reg_reg[0]/CLR, eggs_unit/egg_x_reg_reg[1]/CLR, eggs_unit/egg_x_reg_reg[2]/CLR, eggs_unit/egg_x_reg_reg[4]/CLR, eggs_unit/egg_x_reg_reg[6]/CLR, eggs_unit/egg_x_reg_reg[7]/CLR, eggs_unit/egg_x_reg_reg[9]/CLR, eggs_unit/egg_y_reg_reg[0]/CLR, eggs_unit/egg_y_reg_reg[1]/CLR, eggs_unit/egg_y_reg_reg[4]/CLR, eggs_unit/egg_y_reg_reg[7]/CLR, eggs_unit/egg_x_reg_reg[3]/PRE (the first 15 of 106 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell game_FSM/FSM_sequential_x_state_reg[1]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) eggs_unit/FSM_sequential_state_reg_reg/CLR, eggs_unit/egg_type_reg_reg[3]/CLR, eggs_unit/egg_type_reg_reg[5]/CLR, eggs_unit/egg_x_reg_reg[0]/CLR, eggs_unit/egg_x_reg_reg[1]/CLR, eggs_unit/egg_x_reg_reg[2]/CLR, eggs_unit/egg_x_reg_reg[4]/CLR, eggs_unit/egg_x_reg_reg[6]/CLR, eggs_unit/egg_x_reg_reg[7]/CLR, eggs_unit/egg_x_reg_reg[9]/CLR, eggs_unit/egg_y_reg_reg[0]/CLR, eggs_unit/egg_y_reg_reg[1]/CLR, eggs_unit/egg_y_reg_reg[4]/CLR, eggs_unit/egg_y_reg_reg[7]/CLR, eggs_unit/egg_x_reg_reg[3]/PRE (the first 15 of 106 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#3 Warning
 LUT drives async reset alert  
-LUT cell game_FSM/btnU_reg[5]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ghost_bottom_unit/s_x_next_reg[0]/CLR, ghost_bottom_unit/s_x_next_reg[1]/CLR, ghost_bottom_unit/s_x_next_reg[4]/CLR, ghost_bottom_unit/s_x_next_reg[7]/CLR, ghost_crazy_unit/s_x_next_reg[1]/CLR, ghost_crazy_unit/s_x_next_reg[2]/CLR, ghost_crazy_unit/s_x_next_reg[3]/CLR, ghost_crazy_unit/s_x_next_reg[5]/CLR, ghost_crazy_unit/s_x_next_reg[6]/CLR, ghost_crazy_unit/s_x_next_reg[7]/CLR, ghost_crazy_unit/s_x_next_reg[8]/CLR, ghost_crazy_unit/s_x_next_reg[9]/CLR, ghost_crazy_unit/s_y_next_reg[1]/CLR, ghost_crazy_unit/s_y_next_reg[2]/CLR, ghost_crazy_unit/s_y_next_reg[3]/CLR (the first 15 of 106 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell game_FSM/collision_time_reg[27]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) ghost_crazy_unit/face_t_reg_reg[0]/CLR, yoshi_unit/collision_time_reg_reg[0]/CLR, yoshi_unit/collision_time_reg_reg[10]/CLR, yoshi_unit/collision_time_reg_reg[11]/CLR, yoshi_unit/collision_time_reg_reg[12]/CLR, yoshi_unit/collision_time_reg_reg[13]/CLR, yoshi_unit/collision_time_reg_reg[14]/CLR, yoshi_unit/collision_time_reg_reg[15]/CLR, yoshi_unit/collision_time_reg_reg[16]/CLR, yoshi_unit/collision_time_reg_reg[17]/CLR, yoshi_unit/collision_time_reg_reg[18]/CLR, yoshi_unit/collision_time_reg_reg[19]/CLR, yoshi_unit/collision_time_reg_reg[1]/CLR, yoshi_unit/collision_time_reg_reg[20]/CLR, yoshi_unit/collision_time_reg_reg[21]/CLR (the first 15 of 29 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#4 Warning
 LUT drives async reset alert  
-LUT cell game_FSM/btnU_reg[6]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) ghost_bottom_unit/face_t_reg_reg[0]/CLR, ghost_bottom_unit/face_t_reg_reg[10]/CLR, ghost_bottom_unit/face_t_reg_reg[11]/CLR, ghost_bottom_unit/face_t_reg_reg[12]/CLR, ghost_bottom_unit/face_t_reg_reg[13]/CLR, ghost_bottom_unit/face_t_reg_reg[14]/CLR, ghost_bottom_unit/face_t_reg_reg[15]/CLR, ghost_bottom_unit/face_t_reg_reg[16]/CLR, ghost_bottom_unit/face_t_reg_reg[17]/CLR, ghost_bottom_unit/face_t_reg_reg[18]/CLR, ghost_bottom_unit/face_t_reg_reg[19]/CLR, ghost_bottom_unit/face_t_reg_reg[1]/CLR, ghost_bottom_unit/face_t_reg_reg[20]/CLR, ghost_bottom_unit/face_t_reg_reg[21]/CLR, ghost_bottom_unit/face_t_reg_reg[22]/CLR (the first 15 of 106 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell game_FSM/time_reg[25]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) eggs_unit/new_score_reg_reg/CLR, eggs_unit/score_reg_reg[10]/CLR, eggs_unit/score_reg_reg[11]/CLR, eggs_unit/score_reg_reg[12]/CLR, eggs_unit/score_reg_reg[13]/CLR, eggs_unit/score_reg_reg[1]/CLR, eggs_unit/score_reg_reg[2]/CLR, eggs_unit/score_reg_reg[3]/CLR, eggs_unit/score_reg_reg[4]/CLR, eggs_unit/score_reg_reg[5]/CLR, eggs_unit/score_reg_reg[6]/CLR, eggs_unit/score_reg_reg[7]/CLR, eggs_unit/score_reg_reg[8]/CLR, eggs_unit/score_reg_reg[9]/CLR, ghost_bottom_unit/time_reg_reg[0]/CLR (the first 15 of 147 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#5 Warning
 LUT drives async reset alert  
-LUT cell game_FSM/btnU_reg[7]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) yoshi_unit/btnU_reg_reg[7]/CLR, yoshi_unit/collision_time_reg_reg[0]/CLR, yoshi_unit/collision_time_reg_reg[10]/CLR, yoshi_unit/collision_time_reg_reg[11]/CLR, yoshi_unit/collision_time_reg_reg[12]/CLR, yoshi_unit/collision_time_reg_reg[13]/CLR, yoshi_unit/collision_time_reg_reg[14]/CLR, yoshi_unit/collision_time_reg_reg[15]/CLR, yoshi_unit/collision_time_reg_reg[16]/CLR, yoshi_unit/collision_time_reg_reg[17]/CLR, yoshi_unit/collision_time_reg_reg[18]/CLR, yoshi_unit/collision_time_reg_reg[19]/CLR, yoshi_unit/collision_time_reg_reg[1]/CLR, yoshi_unit/collision_time_reg_reg[20]/CLR, yoshi_unit/collision_time_reg_reg[21]/CLR (the first 15 of 29 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell game_FSM/x_start_reg[19]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) ghost_bottom_unit/s_x_next_reg[0]/CLR, ghost_bottom_unit/s_x_next_reg[1]/CLR, ghost_bottom_unit/s_x_next_reg[4]/CLR, ghost_bottom_unit/s_x_next_reg[7]/CLR, ghost_bottom_unit/s_x_next_reg[8]/CLR, ghost_bottom_unit/s_y_next_reg[0]/CLR, ghost_bottom_unit/s_y_next_reg[1]/CLR, ghost_bottom_unit/s_y_next_reg[4]/CLR, ghost_bottom_unit/s_y_next_reg[5]/CLR, ghost_bottom_unit/s_y_next_reg[9]/CLR, ghost_bottom_unit/s_x_next_reg[2]/PRE, ghost_bottom_unit/s_x_next_reg[3]/PRE, ghost_bottom_unit/s_x_next_reg[5]/PRE, ghost_bottom_unit/s_x_next_reg[6]/PRE, ghost_bottom_unit/s_x_next_reg[9]/PRE (the first 15 of 106 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#6 Warning
 LUT drives async reset alert  
-LUT cell game_FSM/time_reg[25]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) eggs_unit/new_score_reg_reg/CLR, eggs_unit/score_reg_reg[10]/CLR, eggs_unit/score_reg_reg[11]/CLR, eggs_unit/score_reg_reg[12]/CLR, eggs_unit/score_reg_reg[13]/CLR, eggs_unit/score_reg_reg[1]/CLR, eggs_unit/score_reg_reg[2]/CLR, eggs_unit/score_reg_reg[3]/CLR, eggs_unit/score_reg_reg[4]/CLR, eggs_unit/score_reg_reg[5]/CLR, eggs_unit/score_reg_reg[6]/CLR, eggs_unit/score_reg_reg[7]/CLR, eggs_unit/score_reg_reg[8]/CLR, eggs_unit/score_reg_reg[9]/CLR, ghost_bottom_unit/time_reg_reg[0]/CLR (the first 15 of 147 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
-Related violations: <none>
-
-SYNTH-6#1 Warning
-Timing of a block RAM might be sub-optimal  
-The timing for the instance platforms_unit/sel__0, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
-Related violations: <none>
-
-SYNTH-6#2 Warning
-Timing of a block RAM might be sub-optimal  
-The timing for the instance yoshi_unit/sel_rep, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+LUT cell game_FSM/x_time_reg[19]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) yoshi_unit/start_reg_y_reg[10]/CLR, yoshi_unit/start_reg_y_reg[11]/CLR, yoshi_unit/start_reg_y_reg[12]/CLR, yoshi_unit/start_reg_y_reg[13]/CLR, yoshi_unit/start_reg_y_reg[5]/CLR, yoshi_unit/start_reg_y_reg[6]/CLR, yoshi_unit/start_reg_y_reg[7]/CLR, yoshi_unit/start_reg_y_reg[8]/CLR, yoshi_unit/start_reg_y_reg[9]/CLR, yoshi_unit/x_time_reg_reg[10]/CLR, yoshi_unit/x_time_reg_reg[11]/CLR, yoshi_unit/x_time_reg_reg[12]/CLR, yoshi_unit/x_time_reg_reg[13]/CLR, yoshi_unit/x_time_reg_reg[14]/CLR, yoshi_unit/x_time_reg_reg[15]/CLR (the first 15 of 106 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 TIMING-17#1 Warning
@@ -528,6 +518,186 @@ Related violations: <none>
 TIMING-18#31 Warning
 Missing input or output delay  
 An output delay is missing on vsync relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch eggs_unit/eggs_rom_unit/color_data_reg[0] cannot be properly analyzed as its control pin eggs_unit/eggs_rom_unit/color_data_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#2 Warning
+Non-clocked latch  
+The latch eggs_unit/eggs_rom_unit/color_data_reg[10] cannot be properly analyzed as its control pin eggs_unit/eggs_rom_unit/color_data_reg[10]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch eggs_unit/eggs_rom_unit/color_data_reg[11] cannot be properly analyzed as its control pin eggs_unit/eggs_rom_unit/color_data_reg[11]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch eggs_unit/eggs_rom_unit/color_data_reg[1] cannot be properly analyzed as its control pin eggs_unit/eggs_rom_unit/color_data_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#5 Warning
+Non-clocked latch  
+The latch eggs_unit/eggs_rom_unit/color_data_reg[2] cannot be properly analyzed as its control pin eggs_unit/eggs_rom_unit/color_data_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#6 Warning
+Non-clocked latch  
+The latch eggs_unit/eggs_rom_unit/color_data_reg[3] cannot be properly analyzed as its control pin eggs_unit/eggs_rom_unit/color_data_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#7 Warning
+Non-clocked latch  
+The latch eggs_unit/eggs_rom_unit/color_data_reg[4] cannot be properly analyzed as its control pin eggs_unit/eggs_rom_unit/color_data_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#8 Warning
+Non-clocked latch  
+The latch eggs_unit/eggs_rom_unit/color_data_reg[5] cannot be properly analyzed as its control pin eggs_unit/eggs_rom_unit/color_data_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#9 Warning
+Non-clocked latch  
+The latch eggs_unit/eggs_rom_unit/color_data_reg[6] cannot be properly analyzed as its control pin eggs_unit/eggs_rom_unit/color_data_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#10 Warning
+Non-clocked latch  
+The latch eggs_unit/eggs_rom_unit/color_data_reg[7] cannot be properly analyzed as its control pin eggs_unit/eggs_rom_unit/color_data_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#11 Warning
+Non-clocked latch  
+The latch eggs_unit/eggs_rom_unit/color_data_reg[8] cannot be properly analyzed as its control pin eggs_unit/eggs_rom_unit/color_data_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#12 Warning
+Non-clocked latch  
+The latch eggs_unit/eggs_rom_unit/color_data_reg[9] cannot be properly analyzed as its control pin eggs_unit/eggs_rom_unit/color_data_reg[9]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#13 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[0] cannot be properly analyzed as its control pin yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#14 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[10] cannot be properly analyzed as its control pin yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[10]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#15 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[11] cannot be properly analyzed as its control pin yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[11]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#16 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[1] cannot be properly analyzed as its control pin yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#17 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[2] cannot be properly analyzed as its control pin yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#18 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[3] cannot be properly analyzed as its control pin yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#19 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[4] cannot be properly analyzed as its control pin yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#20 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[5] cannot be properly analyzed as its control pin yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#21 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[6] cannot be properly analyzed as its control pin yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#22 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[7] cannot be properly analyzed as its control pin yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#23 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[8] cannot be properly analyzed as its control pin yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#24 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[9] cannot be properly analyzed as its control pin yoshi_unit/yoshi_ghost_rom_unit/color_data_reg[9]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#25 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_rom_unit/color_data_reg[0] cannot be properly analyzed as its control pin yoshi_unit/yoshi_rom_unit/color_data_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#26 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_rom_unit/color_data_reg[10] cannot be properly analyzed as its control pin yoshi_unit/yoshi_rom_unit/color_data_reg[10]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#27 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_rom_unit/color_data_reg[11] cannot be properly analyzed as its control pin yoshi_unit/yoshi_rom_unit/color_data_reg[11]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#28 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_rom_unit/color_data_reg[1] cannot be properly analyzed as its control pin yoshi_unit/yoshi_rom_unit/color_data_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#29 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_rom_unit/color_data_reg[2] cannot be properly analyzed as its control pin yoshi_unit/yoshi_rom_unit/color_data_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#30 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_rom_unit/color_data_reg[3] cannot be properly analyzed as its control pin yoshi_unit/yoshi_rom_unit/color_data_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#31 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_rom_unit/color_data_reg[4] cannot be properly analyzed as its control pin yoshi_unit/yoshi_rom_unit/color_data_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#32 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_rom_unit/color_data_reg[5] cannot be properly analyzed as its control pin yoshi_unit/yoshi_rom_unit/color_data_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#33 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_rom_unit/color_data_reg[6] cannot be properly analyzed as its control pin yoshi_unit/yoshi_rom_unit/color_data_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#34 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_rom_unit/color_data_reg[7] cannot be properly analyzed as its control pin yoshi_unit/yoshi_rom_unit/color_data_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#35 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_rom_unit/color_data_reg[8] cannot be properly analyzed as its control pin yoshi_unit/yoshi_rom_unit/color_data_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#36 Warning
+Non-clocked latch  
+The latch yoshi_unit/yoshi_rom_unit/color_data_reg[9] cannot be properly analyzed as its control pin yoshi_unit/yoshi_rom_unit/color_data_reg[9]/G is not reached by a timing clock
 Related violations: <none>
 
 

@@ -98,7 +98,7 @@ module display_top
                         	.direction(direction), .grounded(grounded));
 	
 	// instantiate background rom circuit
-	background_ghost_rom background_unit (.clk(clk), .row(y[7:0]), .col(x[7:0]), .color_data(bg_rgb));
+	background_ghost_rom background_unit (.clk(clk), .row(y[8:0]), .col(x[9:0]), .color_data(bg_rgb));
 	
 	// instantiate enemy collision detection circuit
 	enemy_collision enemy_collision_unit (.direction(direction), .y_x(y_x), .y_y(y_y), .g_c_x(g_c_x),
@@ -137,7 +137,7 @@ module display_top
         	if (~video_on)
 			rgb_next = 12'b0; // black
         	else if(score_on)
-			rgb_next = 12'hFFF;
+			rgb_next = 12'h000;
 				
 		else if(hearts_on)
 			rgb_next = hearts_rgb;
