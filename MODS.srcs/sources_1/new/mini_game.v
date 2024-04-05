@@ -26,36 +26,64 @@ module mini_game(
     input sw14,              // Turn off sw14 to stop the mini-game
     output wire [3:0] an,
     output wire [6:0] seg ,
-    output reg [2:0] led = 0
+    output reg [13:12] led = 0
     );
     
     reg [3:0] random_num = 0;
-    reg [31:0] gen_interval = 0;    
-    wire led_blink_0, led_blink_1, led_blink_2;
-    wire [2:0] led_blink;
+    reg [5:0] nums_gen_so_far = 0;
+    reg [31:0] gen_interval_count = 0;    
+    wire led_blink_0, led_blink_1;
+    wire [13:12] led_blink;
     
-    flexible_clock clk_10Hz_unit0 (clk, 4999999, led_blink_0);
-    flexible_clock clk_10Hz_unit1 (clk, 4999999, led_blink_1);
-    flexible_clock clk_10Hz_unit2 (clk, 4999999, led_blink_2);
+    reg [3:0] state = 0;
+    reg is_continue = 0;
+    reg prev_sw14 = 0;
     
-    assign led_blink = {led_blink_2, led_blink_1, led_blink_0};
+    parameter blink_frequency = 24_999_999;    // 2 Hz
+    parameter max_no_of_random_nums = 20;
+    parameter gen_interval = 299999999;   // Interval between 2 random nums
+    parameter gen_range = 9;    // Generate random num from 0 - gen_range
+    
+    flexible_clock clk_10Hz_unit0 (clk, blink_frequency, led_blink_0);
+    flexible_clock clk_10Hz_unit1 (clk, blink_frequency, led_blink_1);
+    
+    assign led_blink = {led_blink_1, led_blink_0};
     
     reg [15:0] lfsr_seed; // Default seed for LFSR
-    reg [15:0] lfsr_state = 16'hC0DE;
+    reg [15:0] lfsr_state = 16'b1010_0101_1010_0101;
     
     always @ (posedge clk) begin
-        gen_interval = gen_interval + 1;
-        if (gen_interval == 499999999) begin       // 5-seconds interval between generation of the next random number
-            lfsr_state = {lfsr_state[14:0], lfsr_state[0] ^ lfsr_state[2] ^ lfsr_state[3] ^ lfsr_state[5]};
-            random_num = lfsr_state[3:0] % 10;
-            gen_interval = 0;
+        if (sw14 && !prev_sw14) begin
+            state = 1;
+        end
+        else if (!sw14) begin
+            state = 0;
+        end
+        
+        prev_sw14 = sw14;
+        
+        if (state == 1) begin
+            is_continue = 1;
+        end
+        else begin
+            is_continue = 0;
         end
     end
     
-    seg_display unit (clk, sw14, random_num, an, seg);
+    always @ (posedge clk) begin
+        gen_interval_count = gen_interval_count + 1;
+        if (gen_interval_count == gen_interval && nums_gen_so_far != max_no_of_random_nums && is_continue) begin       // 5-seconds interval between generation of the next random number
+            lfsr_state = {lfsr_state[14:0], lfsr_state[0] ^ lfsr_state[2] ^ lfsr_state[3] ^ lfsr_state[5]};
+            random_num = lfsr_state[3:0] % (gen_range + 1);
+            nums_gen_so_far = nums_gen_so_far + 1;
+            gen_interval_count = 0;      
+        end
+    end
+    
+    seg_display unit (clk, is_continue, nums_gen_so_far, random_num, an, seg);
     
     always @ (posedge clk) begin
-        if (sw14) begin
+        if (is_continue && nums_gen_so_far != max_no_of_random_nums) begin
             if (random_num == 0 && sw == 10'b00000_00001)
                 led = led_blink;
             else if (random_num == 1 && sw == 10'b00000_00010)
@@ -76,6 +104,10 @@ module mini_game(
                 led = led_blink;
             else if (random_num == 9 && sw == 10'b10000_00000)
                 led = led_blink;
+            /*else if (random_num == 10 && sw == 12'b01_00000_00000)
+                led = led_blink;
+            else if (random_num == 11 && sw == 12'b10_00000_00000)
+                led = led_blink; */
             else
                 led = 0;
         end

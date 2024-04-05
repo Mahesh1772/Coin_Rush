@@ -22,18 +22,21 @@
 
 module seg_display(
     input clk,
-    input sw14,
+    input is_continue,
+    input [5:0] nums_gen_so_far,
     input [3:0] num,
     output reg [3:0] an,
     output reg [6:0] seg
     );
     
     reg [1:0] counter = 0;
+    parameter max_no_of_random_nums = 20;
+    
     wire clk_10khz;
     flexible_clock clk_10kHz (clk, 4999, clk_10khz); 
     
     always @ (clk_10khz) begin
-        if (sw14) begin
+        if (num < 10 && is_continue && nums_gen_so_far != max_no_of_random_nums) begin
             an = 4'b1110;
             case (num)
                 0: seg = 7'b1000000;
@@ -48,13 +51,8 @@ module seg_display(
                 9: seg = 7'b0011000;             
             endcase
         end
-        
-        else begin
-            seg = 7'b1111111;
-            an = 4'b1111;
-        end
         /*
-        if (num == 10) begin
+        else if (num == 10 && is_continue && nums_gen_so_far != max_no_of_random_nums) begin
            case(counter)
                 0: begin
                     an = 4'b1110;
@@ -67,7 +65,7 @@ module seg_display(
             endcase
         end
         
-        if (num == 11) begin
+        else if (num == 11 && is_continue && nums_gen_so_far != max_no_of_random_nums) begin
            case(counter)
                 0: begin
                     an = 4'b1110; 
@@ -79,7 +77,14 @@ module seg_display(
                 end
             endcase
         end
-        
+          
+        */
+        else begin
+            an = 4'b1111;
+            seg = 7'b1111111;
+        end
+        counter <= counter + 1;
+        /*
         if (num == 12) begin
            case(counter)
                 0: begin
@@ -131,7 +136,6 @@ module seg_display(
                 end
             endcase
         end
-        
-        counter <= counter + 1;  */
+        */
     end
 endmodule
