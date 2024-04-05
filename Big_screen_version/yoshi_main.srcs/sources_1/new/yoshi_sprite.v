@@ -7,7 +7,7 @@ module yoshi_sprite
 	input wire grounded,         // input signal conveying when Yoshi is grounded on a platform
 	input wire game_over_yoshi,  // input signal conveying when game state is gameover
 	input wire collision,        // input signal conveying when yoshi collides with ghost
-        output reg [11:0] rgb_out,   // output rgb signal for current yoshi pixel
+        output reg [15:0] rgb_out,   // output rgb signal for current yoshi pixel
         output reg yoshi_on,         // output signal asserted when input x/y are within yoshi sprite in display area
         output wire [9:0] y_x, y_y,  // output signals for yoshi sprite's current location within display area
 	output wire jumping_up,      // output signal asserted when yoshi is jumping up
@@ -485,7 +485,7 @@ module yoshi_sprite
     // either a normal yoshi or ghost yoshi is drawn depending on the game state routed into this module
    
     // vector for ROM color_data output
-    wire [11:0] color_data_yoshi, color_data_yoshi_ghost;
+    wire [15:0] color_data_yoshi, color_data_yoshi_ghost;
    
     // instantiate yoshi ROM circuit
     yoshi_rom yoshi_rom_unit (.clk(clk), .row(row), .col(col), .color_data(color_data_yoshi));

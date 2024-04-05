@@ -3,7 +3,7 @@ module hearts_display
 	    input wire clk,                // clock signal for synchronous roms
 	    input wire [9:0] x, y,         // vga x/y signals
 	    input wire [1:0] num_hearts,   // input signal of number of hearts to display
-	    output wire [11:0] color_data, // output signals for rgb color_data
+	    output wire [15:0] color_data, // output signals for rgb color_data
 	    output reg hearts_on           // output signal asserted when x/y is located within the hearts locations
         );	
 	

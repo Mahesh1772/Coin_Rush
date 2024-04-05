@@ -8,7 +8,7 @@ module display_top
 		input wire btnC,
 //		output wire latch, nes_clk,  // outputs from FPGA to nes controller
 		output wire hsync, vsync,    // outputs VGA signals to VGA port
-		output wire [11:0] rgb,      // output rgb signals to VGA DAC
+		output wire [15:0] rgb,      // output rgb signals to VGA DAC
 		output wire [7:0] sseg,      // output signals to control led digit segments
 		output wire [3:0] an         // output signals to multiplex seven-segment display
 	);
@@ -22,7 +22,7 @@ module display_top
 	wire [2:0] game_state;                                        // route current game state from game_state_machine
 	wire game_en;                                                 // route signal conveying is game is enabled (playing mode)
 	wire game_reset;                                              // route signal to trigger reset in other modules from inside game_state_machine
-    	wire reset;                                                   // reset signal
+    wire reset;                                               	  // reset signal
 	assign reset = hard_reset || game_reset;                      // assert reset when either hard_reset or game_reset are asserted
 	wire [9:0] x, y;                                              // location of VGA pixel
 	wire video_on, pixel_tick;                                    // route VGA signals
@@ -98,7 +98,7 @@ module display_top
                         	.direction(direction), .grounded(grounded));
 	
 	// instantiate background rom circuit
-	background_ghost_rom background_unit (.clk(clk), .row(y[7:0]), .col(x[7:0]), .color_data(bg_rgb));
+	background_ghost_rom background_unit (.clk(clk), .row(y[8:0]), .col(x[9:0]), .color_data(bg_rgb));
 	
 	// instantiate enemy collision detection circuit
 	enemy_collision enemy_collision_unit (.direction(direction), .y_x(y_x), .y_y(y_y), .g_c_x(g_c_x),
@@ -137,7 +137,7 @@ module display_top
         	if (~video_on)
 			rgb_next = 12'b0; // black
         	else if(score_on)
-			rgb_next = 12'hFFF;
+			rgb_next = 16'b0000100001100001;
 				
 		else if(hearts_on)
 			rgb_next = hearts_rgb;

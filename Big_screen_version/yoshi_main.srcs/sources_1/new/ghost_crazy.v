@@ -6,7 +6,7 @@ module ghost_crazy
 	input wire [25:0] speed_offset,    // score dependent value that increases ghost's speed
 	output wire [9:0] g_c_x, g_c_y,    // output vector for ghost_crazy's x/y position
         output ghost_crazy_on,             // on signal: vga pixel within sprite location
-	output wire [11:0] rgb_out         // output rgb signal for current pixel
+	output wire [15:0] rgb_out         // output rgb signal for current pixel
     );
    
     // constant declarations
@@ -142,10 +142,10 @@ module ghost_crazy
     assign row = y + face_type - s_y_reg;
    
     // vector for ROM color_data output
-    wire [11:0] color_data;
+    wire [15:0] color_data;
 	
     // infer sprite rom
-    ghost_crazy_rom ghost_crazy_unit (.clk, .row(row), .col(col), .color_data(color_data));
+    ghost_crazy_rom ghost_crazy_unit (.clk(clk), .row(row), .col(col), .color_data(color_data));
    
     // signal asserted when x/y VGA pixel values are within sprite in current location
     wire ghost_on;

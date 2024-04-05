@@ -3,7 +3,7 @@ module platforms
         input wire clk,                    // input clock signal for synchronous ROMs
         input wire video_on,               // input from vga_sync signaling when video signal is on
         input wire [9:0] x, y,             // current pixel coordinates from vga_sync circuit
-        output reg [11:0] rgb_out,         // output rgb signal for current pixel
+        output reg [15:0] rgb_out,         // output rgb signal for current pixel
         output reg platforms_on            // output signal asserted when vga x/y pixel is within platform location in display area
     );
 	
@@ -11,11 +11,11 @@ module platforms
 	reg [6:0] row;
 	reg [3:0] col;
 	// output vectors from walls and blocks roms
-	wire [11:0] walls_color_data, blocks_color_data;
+	wire [15:0] walls_color_data, blocks_color_data;
 	
 	walls_rom walls_unit (.clk(clk), .row(row[4:0]), .col(col), .color_data(walls_color_data));
 	
-    	blocks_rom blocks_unit (.clk(clk), .row(row), .col(col), .color_data(blocks_color_data));
+    	blocks_rom blocks_unit (.clk(clk), .row(row[3:0]), .col(col), .color_data(blocks_color_data));
 	
     	localparam offset = 16; // determines block tiles used
 	

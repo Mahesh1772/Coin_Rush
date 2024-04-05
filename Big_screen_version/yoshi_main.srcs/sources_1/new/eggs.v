@@ -5,7 +5,7 @@ module eggs
         input direction,                   // direction of yoshi
         input wire [9:0] x, y,             // current pixel coordinates from vga_sync circuit
         output eggs_on,                    // on signal: vga pixel within sprite location
-        output wire [11:0] rgb_out,        // output rgb signal for current pixel
+        output wire [15:0] rgb_out,        // output rgb signal for current pixel
         output wire [13:0] score,          // output score register value
 	output wire new_score              // output signal that is asserted when a new score is calculated
     );

@@ -85,7 +85,7 @@ module score_display
 	reg [3:0] col;
 	
 	// output from numbers_rom
-	wire color_data;
+	wire [15:0] color_data;
 	
 	// infer number bitmap rom
 	numbers_rom numbers_rom_unit(.clk(clk), .row(row), .col(col), .color_data(color_data));
@@ -103,7 +103,7 @@ module score_display
 			begin
 			col = x - 336;
 			row = y - 16 + (bcd3 * 16); // offset row index by scaled bcd3 value
-			if(color_data == 1'b1)      // if bit is 1, assert score_on output
+			if(color_data == 16'b0000100001100001)      // if bit is 1, assert score_on output
 				score_on = 1;
 			end
 		
@@ -112,7 +112,7 @@ module score_display
 			begin
 			col = x - 336;
 			row = y - 16 + (bcd2 * 16); // offset row index by scaled bcd2 value
-			if(color_data == 1'b1)      // if bit is 1, assert score_on output
+			if(color_data == 16'b0000100001100001)      // if bit is 1, assert score_on output
 				score_on = 1;
 			end
 		
@@ -121,7 +121,7 @@ module score_display
 			begin
 			col = x - 336;
 			row = y - 16 + (bcd1 * 16); // offset row index by scaled bcd1 value
-			if(color_data == 1'b1)      // if bit is 1, assert score_on output
+			if(color_data == 16'b0000100001100001)      // if bit is 1, assert score_on output
 				score_on = 1;
 			end
 		
@@ -130,7 +130,7 @@ module score_display
 			begin
 			col = x - 336;
 			row = y - 16 + (bcd0 * 16); // offset row index by scaled bcd0 value
-			if(color_data == 1'b1)      // if bit is 1, assert score_on output
+			if(color_data == 16'b0000100001100001)      // if bit is 1, assert score_on output
 				score_on = 1;
 			end
 		end
