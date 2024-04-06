@@ -20,7 +20,7 @@ module gameover_rom
 
 	always @*
 	case ({row_reg, col_reg})
-	//.....
+	   //.....
     11'b00000000000: color_data = 12'b011011011110;
     11'b00000000001: color_data = 12'b000100010100;
     11'b00000000010: color_data = 12'b000100010100;
@@ -1113,8 +1113,7 @@ module gameover_rom
     11'b10001000001: color_data = 12'b000100010100;
     11'b10001000010: color_data = 12'b000100010100;
     11'b10001000011: color_data = 12'b000100010100;
-
-		default: color_data = 12'b000000000000;
     //.....
-    endcase
+
+	endcase
 endmodule

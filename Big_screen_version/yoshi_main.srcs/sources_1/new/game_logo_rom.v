@@ -20,7 +20,7 @@ module game_logo_rom
 
 	always @*
 	case ({row_reg, col_reg})
-	//.....
+	   //.....
     15'b000000000000000: color_data = 12'b011011011110;
     15'b000000000000001: color_data = 12'b011011011110;
     15'b000000000000010: color_data = 12'b011011011110;
@@ -12902,6 +12902,6 @@ module game_logo_rom
     15'b011001001001110: color_data = 12'b011011011110;
     15'b011001001001111: color_data = 12'b011011011110;
     //.....
-		default: color_data = 12'b000000000000;
-    endcase
+
+	endcase
 endmodule

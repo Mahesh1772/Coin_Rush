@@ -13,7 +13,7 @@ module gameover_display
 	assign col = x - 282;
 	
 	// assert game_logo_on when vga x/y is located within logo on screen and color_data doesn't equal background color_data
-	assign gameover_on = (x >= 282 && x < 360 && y >= 72 && y < 86 && rgb_out != 12'b011011011110) ? 1 : 0;
+	assign gameover_on = (x >= 282 && x < 360 && y >= 72 && y < 86 && rgb_out != 12'h000) ? 1 : 0;
 	
 	// instantiate game_logo_rom
 	gameover_rom gameover_rom_unit (.clk(clk), .row(row), .col(col), .color_data(rgb_out));
