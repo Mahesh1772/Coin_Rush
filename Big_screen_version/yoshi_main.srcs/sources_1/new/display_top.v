@@ -6,23 +6,27 @@ module display_top
 		input wire btnR,
 		input wire btnL,
 		input wire btnC,
-//		output wire latch, nes_clk,  // outputs from FPGA to nes controller
 		output wire hsync, vsync,    // outputs VGA signals to VGA port
 		output wire [11:0] rgb,      // output rgb signals to VGA DAC
-		output wire [7:0] sseg,      // output signals to control led digit segments
-		output wire [3:0] an         // output signals to multiplex seven-segment display
+//		output wire [7:0] sseg,      // output signals to control led digit segments
+//		output wire [3:0] an,         // output signals to multiplex seven-segment display
+		input [9:0] sw,
+		output wire [13:12] led,
+        input sw14,
+        output [3:0] an,
+        output [6:0] seg
 	);
 	
 	// *** routing signals and registers ***
 	
-    	wire up = btnU, left = btnL, right = btnR, start = btnC;                                  // route nes controller outputs to sprite circuit
+    wire up = btnU, left = btnL, right = btnR, start = btnC;      // route nes controller outputs to sprite circuit
 	localparam idle = 3'b001;                                     // symbolic state constant representing game state idle
 	localparam gameover = 3'b100;                                 // symbolic state constant representing game state gameover
 	wire [1:0] num_hearts;                                        // route signal conveying number of hearts yoshi has, and to display
 	wire [2:0] game_state;                                        // route current game state from game_state_machine
 	wire game_en;                                                 // route signal conveying is game is enabled (playing mode)
 	wire game_reset;                                              // route signal to trigger reset in other modules from inside game_state_machine
-    	wire reset;                                                   // reset signal
+    wire reset;                                                   // reset signal
 	assign reset = hard_reset || game_reset;                      // assert reset when either hard_reset or game_reset are asserted
 	wire [9:0] x, y;                                              // location of VGA pixel
 	wire video_on, pixel_tick;                                    // route VGA signals
@@ -40,7 +44,7 @@ module display_top
 				 eggs_rgb, hearts_rgb, game_logo_rgb,
 				 gameover_rgb;
 	wire yoshi_on, platforms_on, ghost_crazy_on, ghost_bottom_on, // on signals for various sprite units
-	     ghost_top_on, eggs_on, score_on, hearts_on, game_logo_on,
+	     ghost_top_on, coins_on, score_on, hearts_on, game_logo_on,
 	     gameover_on;
 		 
 	wire [25:0] speed_offset; // amount of speed increase is calculated from current game score and routed to ghosts
@@ -57,7 +61,16 @@ module display_top
 	wire game_over_yoshi;
 	assign game_over_yoshi = (game_state == gameover) ? 1 : 0;
 	
-	// *** instantiate sub modules ***
+	// mini-game
+    wire [3:0] an_wire;
+    wire [6:0] seg_wire;
+    wire [13:12] mini_game_led_wire;    
+    
+    // *** instantiate sub modules ***
+    
+    // instantiate mini-game
+    mini_game play_mini_game (.clk(clk), .sw(sw), .sw14(sw14), .an(an_wire), .seg(seg_wire), 
+                                           .led(mini_game_led_wire));
 	
 	// instantiate vga_sync circuit
 	vga_sync vsync_unit (.clk(clk), .reset(hard_reset), .hsync(hsync), .vsync(vsync),
@@ -68,50 +81,54 @@ module display_top
 //				   .A(up), .B(), .select(), .start(start), .up(), .down(), .left(left), .right(right));
 	
 	// instantiate yoshi sprite circuit
-	yoshi_sprite yoshi_unit (.clk(clk), .reset(reset), .btnU(yoshi_up),
-				 .btnL(yoshi_left), .btnR(yoshi_right), .video_on(video_on), .x(x), .y(y),
-				 .grounded(grounded), .game_over_yoshi(game_over_yoshi), .collision(collision),
-				 .rgb_out(yoshi_rgb),.yoshi_on(yoshi_on), .y_x(y_x), .y_y(y_y), 
-				 .jumping_up(jumping_up), .direction(direction));
+	yoshi_sprite yoshi_unit (.clk(clk), .reset(reset), .btnU(yoshi_up), .btnL(yoshi_left), .btnR(yoshi_right), .video_on(video_on), .x(x), .y(y),
+				.grounded(grounded), .game_over_mario(game_over_yoshi), .collision(collision), .rgb_out(yoshi_rgb),.mario_on(yoshi_on), .mario_x(y_x), .mario_y(y_y), 
+				.jumping_up(jumping_up), .direction(direction));
 	
 	// instantiate crazy ghost circuit						 
-	ghost_crazy ghost_crazy_unit (.clk(clk), .reset(reset), .y_x(y_x), .y_y(y_y),
-				      .x(x), .y(y), .speed_offset(speed_offset), .g_c_x(g_c_x), .g_c_y(g_c_y),
+	ghost_crazy ghost_crazy_unit (.clk(clk), .reset(reset), .mario_x(y_x), .mario_y(y_y),
+				      .x(x), .y(y), .speed_offset(speed_offset), .ghost_crazy_x(g_c_x), .ghost_crazy_y(g_c_y),
 				      .ghost_crazy_on(ghost_crazy_on), .rgb_out(ghost_crazy_rgb));
 	
 	// instantiate top ghost circuit
-	ghost_top ghost_top_unit (.clk(clk), .reset(reset), .y_x(y_x), .y_y(y_y),
-				  .x(x), .y(y), .speed_offset(speed_offset), .g_t_x(g_t_x), .g_t_y(g_t_y),
+	ghost_top ghost_top_unit (.clk(clk), .reset(reset), .mario_x(y_x), .mario_y(y_y),
+				  .x(x), .y(y), .speed_offset(speed_offset), .ghost_top_x(g_t_x), .ghost_top_y(g_t_y),
 				  .ghost_top_on(ghost_top_on), .rgb_out(ghost_top_rgb));
 	
 	// instantiate bottom ghost circuit
-	ghost_bottom ghost_bottom_unit (.clk(clk), .reset(reset), .y_x(y_x), .y_y(y_y),
-					.x(x), .y(y), .speed_offset(speed_offset), .g_b_x(g_b_x), .g_b_y(g_b_y),
+	ghost_bottom ghost_bottom_unit (.clk(clk), .reset(reset), .mario_x(y_x), .mario_y(y_y),
+					.x(x), .y(y), .speed_offset(speed_offset), .ghost_bottom_x(g_b_x), .ghost_bottom_y(g_b_y),
 					.ghost_bottom_on(ghost_bottom_on), .rgb_out(ghost_bottom_rgb));
     
 	// instantiate platform sprites circuit
-    	platforms platforms_unit (.clk(clk), .video_on(video_on), .x(x), .y(y), .rgb_out(platforms_rgb),
-	                      .platforms_on(platforms_on));
+    platforms platforms_unit (.clk(clk), .video_on(video_on), .x(x), .y(y), .rgb_out(platforms_rgb),
+	                  .platforms_on(platforms_on));
 	
 	// instantate circuit that determines if yoshi sprite is on the ground or a platform
-	grounded grounded_unit (.clk(clk), .reset(reset), .y_x(y_x), .y_y(y_y), .jumping_up(jumping_up),
+	grounded grounded_unit (.clk(clk), .reset(reset), .mario_x(y_x), .mario_y(y_y), .jumping_up(jumping_up),
                         	.direction(direction), .grounded(grounded));
 	
 	// instantiate background rom circuit
-	background_ghost_rom background_unit (.clk(clk), .row(y[8:0]), .col(x[9:0]), .color_data(bg_rgb));
+	background_ghost_rom background_unit (.clk(clk), .row(y[7:0]), .col(x[7:0]), .color_data(bg_rgb));
 	
 	// instantiate enemy collision detection circuit
-	enemy_collision enemy_collision_unit (.direction(direction), .y_x(y_x), .y_y(y_y), .g_c_x(g_c_x),
-                                              .g_c_y(g_c_y), .g_t_x(g_t_x), .g_t_y(g_t_y), .g_b_x(g_b_x),
-					      .g_b_y(g_b_y), .collision(collision)); 
+	enemy_collision enemy_collision_unit (.direction(direction), .mario_x(y_x), .mario_y(y_y), .ghost_crazy_x(g_c_x),
+                                              .ghost_crazy_y(g_c_y), .ghost_top_x(g_t_x), .ghost_top_y(g_t_y), .ghost_bottom_x(g_b_x),
+					      .ghost_bottom_y(g_b_y), .collision(collision)); 
 	
 	// instantiate eggs circuit
-	eggs eggs_unit(.clk(clk), .reset(reset), .y_x(y_x), .y_y(y_y), .direction(direction),
-		       .x(x), .y(y), .eggs_on(eggs_on), .rgb_out(eggs_rgb), .score(score), .new_score(new_score));
+//	eggs eggs_unit(.clk(clk), .reset(reset), .y_x(y_x), .y_y(y_y), .direction(direction),
+//		       .x(x), .y(y), .coins_on(coins_on), .rgb_out(eggs_rgb), .score(score), .new_score(new_score));
+
+    eggs eggs_unit(.clk(clk), .reset(reset), .mario_x(y_x), .mario_y(y_y), .direction(direction),
+                   .x(x), .y(y), .mini_game_led(mini_game_led_wire),.coins_on(coins_on), .rgb_out(eggs_rgb), .score(score), .new_score(new_score));
 
 	// instantiate score display circuit
+//	score_display score_display_unit (.clk(clk), .reset(reset), .new_score(new_score), .score(score),
+//					  .x(x), .y(y), .sseg(sseg), .an(an), .score_on(score_on));	
+
 	score_display score_display_unit (.clk(clk), .reset(reset), .new_score(new_score), .score(score),
-					  .x(x), .y(y), .sseg(sseg), .an(an), .score_on(score_on));		   
+                          .x(x), .y(y), .score_on(score_on));	   
 	
 	// instantiate hearts display circuit
 	hearts_display hearts_display_unit (.clk(clk), .x(x), .y(y), .num_hearts(num_hearts),
@@ -137,7 +154,7 @@ module display_top
         	if (~video_on)
 			rgb_next = 12'b0; // black
         	else if(score_on)
-			rgb_next = 12'h000;
+			rgb_next = 12'hFFF;
 				
 		else if(hearts_on)
 			rgb_next = hearts_rgb;
@@ -160,7 +177,7 @@ module display_top
 		else if (yoshi_on && game_state != idle)
 			rgb_next = yoshi_rgb;       
 				
-		else if (eggs_on && game_en)
+		else if (coins_on && game_en)
 			rgb_next = eggs_rgb;
 		
 		else if(platforms_on)
@@ -177,5 +194,10 @@ module display_top
 			
 	// output rgb data to VGA DAC
 	assign rgb = rgb_reg;
+	
+	// outputs of mini-game
+    assign an = an_wire;
+    assign seg = seg_wire;
+    assign led = mini_game_led_wire;
 
 endmodule

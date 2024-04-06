@@ -43,17 +43,6 @@ set_property PACKAGE_PIN R2 [get_ports hard_reset]
 set_property IOSTANDARD LVCMOS33 [get_ports hard_reset]
 
 
-###Pmod Header JA
-## reg
-#set_property PACKAGE_PIN J1 [get_ports nes_clk]					
-#	set_property IOSTANDARD LVCMOS33 [get_ports nes_clk]
-## blue
-#set_property PACKAGE_PIN L2 [get_ports latch]					
-#	set_property IOSTANDARD LVCMOS33 [get_ports latch]
-## green
-#set_property PACKAGE_PIN J2 [get_ports data]					
-#	set_property IOSTANDARD LVCMOS33 [get_ports data]
-
 ##Buttons
 set_property -dict { PACKAGE_PIN U18   IOSTANDARD LVCMOS33 } [get_ports btnC]
 set_property -dict { PACKAGE_PIN T18   IOSTANDARD LVCMOS33 } [get_ports btnU]
@@ -65,24 +54,34 @@ set_property BITSTREAM.GENERAL.COMPRESS TRUE [current_design]
 set_property CONFIG_MODE SPIx4 [current_design]
 set_property BITSTREAM.CONFIG.CONFIGRATE 33 [current_design]
 
-#7 segment display
-set_property PACKAGE_PIN W7 [get_ports {sseg[6]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {sseg[6]}]
-set_property PACKAGE_PIN W6 [get_ports {sseg[5]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {sseg[5]}]
-set_property PACKAGE_PIN U8 [get_ports {sseg[4]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {sseg[4]}]
-set_property PACKAGE_PIN V8 [get_ports {sseg[3]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {sseg[3]}]
-set_property PACKAGE_PIN U5 [get_ports {sseg[2]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {sseg[2]}]
-set_property PACKAGE_PIN V5 [get_ports {sseg[1]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {sseg[1]}]
-set_property PACKAGE_PIN U7 [get_ports {sseg[0]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {sseg[0]}]
+## Switches
+set_property -dict { PACKAGE_PIN V17   IOSTANDARD LVCMOS33 } [get_ports {sw[0]}]
+set_property -dict { PACKAGE_PIN V16   IOSTANDARD LVCMOS33 } [get_ports {sw[1]}]
+set_property -dict { PACKAGE_PIN W16   IOSTANDARD LVCMOS33 } [get_ports {sw[2]}]
+set_property -dict { PACKAGE_PIN W17   IOSTANDARD LVCMOS33 } [get_ports {sw[3]}]
+set_property -dict { PACKAGE_PIN W15   IOSTANDARD LVCMOS33 } [get_ports {sw[4]}]
+set_property -dict { PACKAGE_PIN V15   IOSTANDARD LVCMOS33 } [get_ports {sw[5]}]
+set_property -dict { PACKAGE_PIN W14   IOSTANDARD LVCMOS33 } [get_ports {sw[6]}]
+set_property -dict { PACKAGE_PIN W13   IOSTANDARD LVCMOS33 } [get_ports {sw[7]}]
+set_property -dict { PACKAGE_PIN V2    IOSTANDARD LVCMOS33 } [get_ports {sw[8]}]
+set_property -dict { PACKAGE_PIN T3    IOSTANDARD LVCMOS33 } [get_ports {sw[9]}]
+set_property -dict { PACKAGE_PIN T2    IOSTANDARD LVCMOS33 } [get_ports {sw[10]}]
+set_property -dict { PACKAGE_PIN R3    IOSTANDARD LVCMOS33 } [get_ports {sw[11]}]
+set_property -dict { PACKAGE_PIN T1    IOSTANDARD LVCMOS33 } [get_ports {sw14}]
 
-set_property PACKAGE_PIN V7 [get_ports sseg[7]]							
-	set_property IOSTANDARD LVCMOS33 [get_ports sseg[7]]
+## LEDs
+set_property -dict { PACKAGE_PIN P3    IOSTANDARD LVCMOS33 } [get_ports {led[12]}]
+set_property -dict { PACKAGE_PIN N3    IOSTANDARD LVCMOS33 } [get_ports {led[13]}]
+
+##7 Segment Display
+set_property -dict { PACKAGE_PIN W7   IOSTANDARD LVCMOS33 } [get_ports {seg[0]}]
+set_property -dict { PACKAGE_PIN W6   IOSTANDARD LVCMOS33 } [get_ports {seg[1]}]
+set_property -dict { PACKAGE_PIN U8   IOSTANDARD LVCMOS33 } [get_ports {seg[2]}]
+set_property -dict { PACKAGE_PIN V8   IOSTANDARD LVCMOS33 } [get_ports {seg[3]}]
+set_property -dict { PACKAGE_PIN U5   IOSTANDARD LVCMOS33 } [get_ports {seg[4]}]
+set_property -dict { PACKAGE_PIN V5   IOSTANDARD LVCMOS33 } [get_ports {seg[5]}]
+set_property -dict { PACKAGE_PIN U7   IOSTANDARD LVCMOS33 } [get_ports {seg[6]}]
+#set_property -dict { PACKAGE_PIN V7   IOSTANDARD LVCMOS33 } [get_ports {dp}]
 
 set_property PACKAGE_PIN U2 [get_ports {an[0]}]					
 	set_property IOSTANDARD LVCMOS33 [get_ports {an[0]}]

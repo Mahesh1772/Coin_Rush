@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Fri Apr  5 16:15:06 2024
+# Process ID: 5664
+# Current directory: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent30940 C:\Users\bsiva\Desktop\mahesh\University\SEM_4\CG2026\FPGA_EMODS\Big_screen_version\yoshi_main.xpr
+# Log file: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/vivado.log
+# Journal file: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+archive_project C:/Users/bsiva/Desktop/coin_rush.xpr.zip -temp_dir C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/.Xil/Vivado-5664-LAPTOP-O0D571VU -force -include_runs_in_progress -include_local_ip_cache -include_config_settings

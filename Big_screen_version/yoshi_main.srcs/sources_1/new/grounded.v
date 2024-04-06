@@ -1,10 +1,10 @@
 module grounded
     (
         input wire clk, reset,     // clock, reset signals for synchrnous registers
-        input wire [9:0] y_x, y_y, // current pixel coordinates from vga_sync circuit
-        input wire jumping_up,     // input signal asserted when yoshi is in jumping_up state
-	input wire direction,       // input signal conveying yoshi's direction
-	output wire grounded       // output signal asserted when yoshi is in contact with a platform 
+        input wire [9:0] mario_x, mario_y, // current pixel coordinates from vga_sync circuit
+        input wire jumping_up,     // input signal asserted when mario is in jumping_up state
+		input wire direction,       // input signal conveying mario's direction
+		output wire grounded       // output signal asserted when mario is in contact with a platform 
     );
    
     // constant declarations
@@ -16,7 +16,7 @@ module grounded
     localparam T_W = 16;
     localparam T_H = 16;
    
-    // maximum x dimension for combines tiles of yoshi (see diagram)
+    // maximum x dimension for combines tiles of mario (see diagram)
     localparam X_MAX = 25;
    
     // difference in head and torso tile placement in x dimension (see diagram)
@@ -44,56 +44,56 @@ module grounded
 		// default
 		grounded_next = grounded_reg;
 		
-		// yoshi is allowed to jump up over a platform and then land on it,
+		// mario is allowed to jump up over a platform and then land on it,
         	// only assert grounded when not jumping_up.
-		// check if yoshi is on each platform, if so change grounded signal to be asserted
+		// check if mario is on each platform, if so change grounded signal to be asserted
 		if(!jumping_up)
 			begin
 			
 			// 'A'	
-			if(direction == LEFT && (y_y == 132 - 2*T_H) && (y_x >= 16) && (y_x < 160 - LB))
+			if(direction == LEFT && (mario_y == 132 - 2*T_H) && (mario_x >= 16) && (mario_x < 160 - LB))
 				grounded_next = 1;
 			
-			else if(direction == RIGHT && (y_y == 132 - 2*T_H) && (y_x >= 16) && (y_x < 160 - RB))
+			else if(direction == RIGHT && (mario_y == 132 - 2*T_H) && (mario_x >= 16) && (mario_x < 160 - RB))
 				grounded_next = 1;
 			
 			// 'B'
-			else if(direction == LEFT && (y_y == 132 - 2*T_H) && (y_x >= 480 - LA) && (y_x < 624))
+			else if(direction == LEFT && (mario_y == 132 - 2*T_H) && (mario_x >= 480 - LA) && (mario_x < 624))
 				grounded_next = 1;
 			
-			else if(direction == RIGHT && (y_y == 132 - 2*T_H) && (y_x >= 480 - RA) && (y_x < 624))
+			else if(direction == RIGHT && (mario_y == 132 - 2*T_H) && (mario_x >= 480 - RA) && (mario_x < 624))
 				grounded_next = 1;
 			
 			// 'C'
-			else if(direction == LEFT && (y_y == 215 - 2*T_H) && (y_x >= 80 - LA) && (y_x < 561 - LB))
+			else if(direction == LEFT && (mario_y == 215 - 2*T_H) && (mario_x >= 80 - LA) && (mario_x < 561 - LB))
 				grounded_next = 1;
 			
-			else if(direction == RIGHT && (y_y == 215 - 2*T_H) && (y_x >= 80 - RA) && (y_x < 561 - RB))
+			else if(direction == RIGHT && (mario_y == 215 - 2*T_H) && (mario_x >= 80 - RA) && (mario_x < 561 - RB))
 				grounded_next = 1;
 			
 			// 'D'
-			else if(direction == LEFT && (y_y == 298 - 2*T_H) && (y_x >= 16) && (y_x < 256 - LB))
+			else if(direction == LEFT && (mario_y == 298 - 2*T_H) && (mario_x >= 16) && (mario_x < 256 - LB))
 				grounded_next = 1;
 			
-			else if(direction == RIGHT && (y_y == 298 - 2*T_H) && (y_x >= 16) && (y_x < 256 - RB))
+			else if(direction == RIGHT && (mario_y == 298 - 2*T_H) && (mario_x >= 16) && (mario_x < 256 - RB))
 				grounded_next = 1;
 				
 			// 'E'
-			else if(direction == LEFT && (y_y == 298 - 2*T_H) && (y_x >= 384 - LA) && (y_x < 624 - LB))
+			else if(direction == LEFT && (mario_y == 298 - 2*T_H) && (mario_x >= 384 - LA) && (mario_x < 624 - LB))
 				grounded_next = 1;
 			
-			else if(direction == RIGHT && (y_y == 298 - 2*T_H) && (y_x >= 384 - RA) && (y_x < 624 - RB))
+			else if(direction == RIGHT && (mario_y == 298 - 2*T_H) && (mario_x >= 384 - RA) && (mario_x < 624 - RB))
 				grounded_next = 1;
 			
 			// 'F'
-			else if(direction == LEFT && (y_y == 381 - 2*T_H) && (y_x > 112 - LA) && (y_x < 529 - LB))
+			else if(direction == LEFT && (mario_y == 381 - 2*T_H) && (mario_x > 112 - LA) && (mario_x < 529 - LB))
 				grounded_next = 1;
 			
-			else if(direction == RIGHT && (y_y == 381 - 2*T_H) && (y_x > 112 - RA) && (y_x < 529 - RB))
+			else if(direction == RIGHT && (mario_y == 381 - 2*T_H) && (mario_x > 112 - RA) && (mario_x < 529 - RB))
 				grounded_next = 1;
 				
 			// 'G'
-			else if((y_y == MAX_Y - 2*T_H - 16))
+			else if((mario_y == MAX_Y - 2*T_H - 16))
 				grounded_next = 1;
 	
 			else 

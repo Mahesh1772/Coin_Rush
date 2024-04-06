@@ -102,7 +102,7 @@ module platforms
 					end
 				end
 
-			// 'G' bottom row 
+			//bottom row 
 			if(y > 463)
 				begin
 				row = y - 464;

@@ -1,17 +1,17 @@
 module yoshi_sprite
     (
-        input wire clk, reset,       // clock/reset inputs for synchronous registers 
-        input wire btnU, btnL, btnR, // inputs used to move sprite across screen
-        input wire video_on,         // input from vga_sync signaling when video signal is on
-        input wire [9:0] x, y,       // current pixel coordinates from vga_sync circuit
-	    input wire grounded,         // input signal conveying when Yoshi is grounded on a platform
-	    input wire game_over_yoshi,  // input signal conveying when game state is gameover
-	    input wire collision,        // input signal conveying when yoshi collides with ghost
-        output reg [11:0] rgb_out,   // output rgb signal for current yoshi pixel
-        output reg yoshi_on,         // output signal asserted when input x/y are within yoshi sprite in display area
-        output wire [9:0] y_x, y_y,  // output signals for yoshi sprite's current location within display area
-	    output wire jumping_up,      // output signal asserted when yoshi is jumping up
-	    output wire direction        // output signal conveying yoshi's direction of motion
+        input wire clk, reset,              // clock/reset inputs for synchronous registers 
+        input wire btnU, btnL, btnR,        // inputs used to move sprite across screen
+        input wire video_on,                // input from vga_sync signaling when video signal is on
+        input wire [9:0] x, y,              // current pixel coordinates from vga_sync circuit
+	    input wire grounded,                // input signal conveying when mario is grounded on a platform
+	    input wire game_over_mario,         // input signal conveying when game state is gameover
+	    input wire collision,               // input signal conveying when mario collides with ghost
+        output reg [11:0] rgb_out,          // output rgb signal for current mario pixel
+        output reg mario_on,                // output signal asserted when input x/y are within mario sprite in display area
+        output wire [9:0] mario_x, mario_y, // output signals for mario sprite's current location within display area
+	    output wire jumping_up,             // output signal asserted when mario is jumping up
+	    output wire direction               // output signal conveying mario's direction of motion
     );
    
     // constant declarations
@@ -24,36 +24,36 @@ module yoshi_sprite
     localparam T_W = 16;
     localparam T_H = 16;
    
-    // maximum x dimension for combines tiles of yoshi (see diagram)
+    // maximum x dimension for combines tiles of mario (see diagram)
     localparam X_MAX = 16;
    
     // difference in head and torso tile placement in x dimension (see diagram)
     localparam X_D = 0;
    
-    /***********************************************************************************/
+    /////////////////////////////////////////////////////////////////////////////////////
     /*                           sprite location registers                             */  
-    /***********************************************************************************/
-    // Yoshi sprite location regs, pixel location with respect to top left corner
-    reg [9:0] s_x_reg, s_y_reg;
-    reg [9:0] s_x_next, s_y_next;
+    /////////////////////////////////////////////////////////////////////////////////////
+    // mario sprite location regs, pixel location with respect to top left corner
+    reg [9:0] sprite_x_reg, sprite_y_reg;
+    reg [9:0] sprite_x_next, sprite_y_next;
    
     // infer registers for sprite location
     always @(posedge clk, posedge reset)
         if (reset)
             begin
-            s_x_reg     <= 320;                 // initialize to middle of screen,
-            s_y_reg     <= MAX_Y - 2*T_H - 16;  // on bottom floor
+            sprite_x_reg     <= 320;                 // initialize to middle of screen,
+            sprite_y_reg     <= MAX_Y - 2*T_H - 16;  // on bottom floor
             end
         else
             begin
-            s_x_reg     <= s_x_next;
-            s_y_reg     <= s_y_next;
+            sprite_x_reg     <= sprite_x_next;
+            sprite_y_reg     <= sprite_y_next;
             end
    
-    /***********************************************************************************/
+    /////////////////////////////////////////////////////////////////////////////////////
     /*                                direction register                               */  
-    /***********************************************************************************/
-    // determines if yoshi sprite tiles are displayed normally or mirrored in x dimension
+    /////////////////////////////////////////////////////////////////////////////////////
+    // determines if mario sprite tiles are displayed normally or mirrored in x dimension
    
     // symbolic states for left and right motion
     localparam LEFT = 0;
@@ -80,9 +80,9 @@ module yoshi_sprite
             dir_next = RIGHT;
         end
    
-    /***********************************************************************************/
+    /////////////////////////////////////////////////////////////////////////////////////
     /*                           FSMD for x motion and momentum                        */  
-    /***********************************************************************************/
+    /////////////////////////////////////////////////////////////////////////////////////
    
     // symbolic state representations for FSM
     localparam [1:0] no_dir = 2'b00,
@@ -93,12 +93,12 @@ module yoshi_sprite
     // on clk edges to 0 between sprite position updates. The initial value sets the speed of motion. This
     // register decrements from a smaller value each successive move when a directional button is held, such that 
     // the sprite will slowly speed up to a maximum speed, which is given by a minimum countdown time value. 
-    // When yoshi is grounded, the momentum in x can change to another direction instantaneously. When he is 
+    // When mario is grounded, the momentum in x can change to another direction instantaneously. When he is 
     // in the air and moving in a particular direction, momentum in that x direction is constant and he will
     // continue to follow a parabolic trajectory through space. The x momentum can be adjusted  midair by pressing
     // the button opposite of the current direction, but this change follows the 2D game physics standard that has
     // the momentum slowly decrease until a minimum until it begins increasing in the new direction. This allows
-    // yoshi to change his motion midair but with a delay due to overcoming initial momentum. 	
+    // mario to change his motion midair but with a delay due to overcoming initial momentum. 	
                      
     // constant parameters that determine x direction speed              
     localparam TIME_START_X  =   800000;  // starting value for x_time & x_start registers
@@ -128,7 +128,7 @@ module yoshi_sprite
     always @*
         begin
         // defaults
-        s_x_next     = s_x_reg;
+        sprite_x_next     = sprite_x_reg;
         x_state_next = x_state_reg;
         x_start_next = x_start_reg;
         x_time_next  = x_time_reg;
@@ -137,13 +137,13 @@ module yoshi_sprite
             
             no_dir:
                 begin
-                if(btnL && !btnR && (s_x_reg >= 1))                             // if left button pressed and can move left                  
+                if(btnL && !btnR && (sprite_x_reg >= 1))                             // if left button pressed and can move left                  
                     begin
                     x_state_next = left;                                        // go to left state
                     x_time_next  = TIME_START_X;                                // set x_time reg to start time
                     x_start_next = TIME_START_X;                                // set start time reg to start time
                     end
-                else if(!btnL && btnR && (s_x_reg + 1 < MAX_X - T_W - X_D + 1)) // if right button pressed and can move right
+                else if(!btnL && btnR && (sprite_x_reg + 1 < MAX_X - T_W - X_D + 1)) // if right button pressed and can move right
                     begin
                     x_state_next = right;                                       // go to right state
                     x_time_next  = TIME_START_X;                                // set x_time reg to start time
@@ -158,8 +158,8 @@ module yoshi_sprite
                    
                 else if(x_time_reg == 0)                                        // if x_time reg = 0
                     begin 
-                    if(s_x_reg >= 17)                                           // is sprite can move left,
-                        s_x_next = s_x_reg - 1;                                 // move left
+                    if(sprite_x_reg >= 17)                                           // is sprite can move left,
+                        sprite_x_next = sprite_x_reg - 1;                                 // move left
                     
 		    if(btnL && x_start_reg > TIME_MIN_X)                    	// if left button pressed and x_start_reg > min,
                         begin                                                   // make sprite move faster in x direction,
@@ -179,7 +179,7 @@ module yoshi_sprite
                         end
                     end
                    
-                if(grounded && (!btnL || (btnL && btnR)))                       // if yoshi grounded, and left button unpressed, or both pressed
+                if(grounded && (!btnL || (btnL && btnR)))                       // if mario grounded, and left button unpressed, or both pressed
                     x_state_next = no_dir;                                      // go to no direction state
                 else if(!grounded && btnR && x_start_reg >= TIME_START_X)       // if mid air and right button pressed and left momentum minimized
                     begin
@@ -196,8 +196,8 @@ module yoshi_sprite
 				
 		else if(x_time_reg == 0)                                        // if x_time reg = 0
 			begin
-			if(s_x_reg + 1 < MAX_X - T_W - X_D - 15)                // is sprite can move right,
-			s_x_next = s_x_reg + 1;                                 // move right
+			if(sprite_x_reg + 1 < MAX_X - T_W - X_D - 15)                // is sprite can move right,
+			sprite_x_next = sprite_x_reg + 1;                                 // move right
 						
 			if(btnR && x_start_reg > TIME_MIN_X)                    // if right button pressed and x_start_reg > min,
 				begin                                           // make sprite move faster in x direction,
@@ -217,7 +217,7 @@ module yoshi_sprite
 				end
 			end
 				
-		if(grounded && (!btnR || (btnL && btnR)))                       // if yoshi grounded, and right button unpressed, or both pressed
+		if(grounded && (!btnR || (btnL && btnR)))                       // if mario grounded, and right button unpressed, or both pressed
 			x_state_next = no_dir;                                  // go to no direction state
 		else if(!grounded && btnL && x_start_reg >= TIME_START_X)       // if mid air and left button pressed and right momentum minimized
 			begin
@@ -229,9 +229,9 @@ module yoshi_sprite
 		endcase
 		end    
                    
-    /***********************************************************************************/
+    /////////////////////////////////////////////////////////////////////////////////////
     /*              FSMD for Sprite standing/walking states, and y motion              */  
-    /***********************************************************************************/  
+    /////////////////////////////////////////////////////////////////////////////////////  
    
     // motion in the y dimension follows a scheme that simulates gravity with a terminal velocity. When the jump/up
     // button is pressed it loads a start countdown value to the jump_t_reg, wich decrements on clk edges until 0,
@@ -239,11 +239,11 @@ module yoshi_sprite
     // which slows down the sprite's y position updates until a max time value is reached, upon which the sprite will
     // move downward. While moving downward, the jump_t_reg decrements to 0, when it updates the sprite position. Between
     // position updates, the loaded time to jump_t_reg decreses until reaching a terminal value. In effect, this scheme 
-    // allows yoshi to jump up, slowing down until reaching a peak, then falling down, speeding up until reaching a terminal
+    // allows mario to jump up, slowing down until reaching a peak, then falling down, speeding up until reaching a terminal
     // falling speed. 
-    // When jump/up button is initially pressed, the duration it is held increments the extra_up_reg, which will allow yoshi
+    // When jump/up button is initially pressed, the duration it is held increments the extra_up_reg, which will allow mario
     // to jump higher depending on the time the button is held. 
-    // Since jumping requires yoshi to be drawn differently depending on whether going up or down, how yoshi is drawn standing 
+    // Since jumping requires mario to be drawn differently depending on whether going up or down, how mario is drawn standing 
     // or while walking is determined in the same FSM.
    
     // symbolic state representations
@@ -306,7 +306,7 @@ module yoshi_sprite
         jump_t_next   = jump_t_reg;
         start_next_y  = start_reg_y;
         extra_up_next = extra_up_reg;
-        s_y_next      = s_y_reg;
+        sprite_y_next      = sprite_y_reg;
         dy            = 0;
        
         case (state_reg_y)
@@ -378,9 +378,9 @@ module yoshi_sprite
                     if(btnU && start_reg_y > BEGIN_COUNT_EXTRA)   // if btnU still pressed, after certain time
                         extra_up_next = extra_up_reg + 1;         // increment extra up count
                     
-		    if( s_y_next > MIN_Y)                 	// if yoshi can go up
-			s_y_next = s_y_reg - 1;                   // move yoshi sprite up by one pixel
-                else 				                  // else if yoshi will hit ceiling
+		    if( sprite_y_next > MIN_Y)                 	// if mario can go up
+			sprite_y_next = sprite_y_reg - 1;                   // move mario sprite up by one pixel
+                else 				                  // else if mario will hit ceiling
 			begin
 			state_next_y = jump_down;                 // go to jump down state
 			start_next_y = TIME_MAX_Y;                // load max time in start time reg
@@ -422,9 +422,9 @@ module yoshi_sprite
                     begin
                     extra_up_next = extra_up_reg - 1;       // decrement extra jump up count reg
                     
-		    if( s_y_next > MIN_Y)                   // if yoshi can go up
-			s_y_next = s_y_reg - 1;             // move yoshi sprite up by one pixel
-                    else 									// else if yoshi will hit ceiling
+		    if( sprite_y_next > MIN_Y)                   // if mario can go up
+			sprite_y_next = sprite_y_reg - 1;             // move mario sprite up by one pixel
+                    else 									// else if mario will hit ceiling
 			state_next_y = jump_down;           // go to jump down state
 	
 		    start_next_y = TIME_MAX_Y;              // reset start time reg to max time
@@ -442,9 +442,9 @@ module yoshi_sprite
                    
                 if(jump_t_reg == 0)                                   // if jump time reg = 0
                     begin
-                    if(!grounded)                                      // if yoshi sprite is on ground or platform
+                    if(!grounded)                                      // if mario sprite is on ground or platform
                         begin
-                        s_y_next = s_y_reg + 1;                       // move sprite down one pixel
+                        sprite_y_next = sprite_y_reg + 1;                       // move sprite down one pixel
                         if(start_reg_y > TIME_TERM_Y)                 // if time start reg isn't down to start time
                             begin
                             start_next_y = start_reg_y - TIME_STEP_Y; // dercrement time start reg
@@ -462,9 +462,9 @@ module yoshi_sprite
         endcase
         end
        
-    /***********************************************************************************/
+    /////////////////////////////////////////////////////////////////////////////////////
     /*                                     ROM indexing                                */  
-    /***********************************************************************************/  
+    /////////////////////////////////////////////////////////////////////////////////////  
                    
     // sprite coordinate addreses, from upper left corner
     // used to index ROM data
@@ -473,45 +473,45 @@ module yoshi_sprite
    
     // current pixel coordinate minus current sprite coordinate gives ROM index
 	// column indexing depends on direction, and whether drawing head or torso to screen 
-    assign col = (dir_reg == RIGHT && head_on)  ? (X_D + T_W - 1 - (x - s_x_reg)) :
-                 (dir_reg == LEFT  && head_on)  ?                 ((x - s_x_reg)) :
-                 (dir_reg == RIGHT && torso_on) ?       (T_W - 1 - (x - s_x_reg)) :
-                 (dir_reg == LEFT  && torso_on) ?           ((x - s_x_reg - X_D)) : 0;
+    assign col = (dir_reg == RIGHT && head_on)  ? (X_D + T_W - 1 - (x - sprite_x_reg)) :
+                 (dir_reg == LEFT  && head_on)  ?                 ((x - sprite_x_reg)) :
+                 (dir_reg == RIGHT && torso_on) ?       (T_W - 1 - (x - sprite_x_reg)) :
+                 (dir_reg == LEFT  && torso_on) ?           ((x - sprite_x_reg - X_D)) : 0;
     
     // row indexing depends on whether drawing head or torso to screen	
-    assign row = head_on  ? (y - s_y_reg):
-                 torso_on ? (dy + y - s_y_reg): 0;
+    assign row = head_on  ? (y - sprite_y_reg):
+                 torso_on ? (dy + y - sprite_y_reg): 0;
 				 
-    // either a normal yoshi or ghost yoshi is drawn depending on the game state routed into this module
+    // either a normal mario or ghost mario is drawn depending on the game state routed into this module
    
     // vector for ROM color_data output
-    wire [11:0] color_data_yoshi, color_data_yoshi_ghost;
+    wire [11:0] color_data_mario, color_data_mario_ghost;
    
-    // instantiate yoshi ROM circuit
-    yoshi_rom yoshi_rom_unit (.clk(clk), .row(row), .col(col), .color_data(color_data_yoshi));
+    // instantiate mario ROM circuit
+    yoshi_rom mario_rom_unit (.clk(clk), .row(row), .col(col), .color_data(color_data_mario));
 	
-    // instantiate yoshi ghost ROM circuit
-    yoshi_ghost_rom yoshi_ghost_rom_unit (.clk(clk), .row(row), .col(col), .color_data(color_data_yoshi_ghost));
+    // instantiate mario ghost ROM circuit
+    yoshi_ghost_rom mario_ghost_rom_unit (.clk(clk), .row(row), .col(col), .color_data(color_data_mario_ghost));
 	
     // vector to signal when vga_sync pixel is within head or torso tile (see diagram)
     wire head_on, torso_on;
-    assign head_on = (dir_reg == RIGHT) && (x >= s_x_reg + X_D) && (x <= s_x_reg + X_MAX - 1) && (y >= s_y_reg) && (y <= s_y_reg + T_H - 1) ? 1
-                   : (dir_reg == LEFT) && (x >= s_x_reg) && (x <= s_x_reg + T_W - 1) && (y >= s_y_reg) && (y <= s_y_reg + T_H - 1) ? 1 : 0;
+    assign head_on = (dir_reg == RIGHT) && (x >= sprite_x_reg + X_D) && (x <= sprite_x_reg + X_MAX - 1) && (y >= sprite_y_reg) && (y <= sprite_y_reg + T_H - 1) ? 1
+                   : (dir_reg == LEFT) && (x >= sprite_x_reg) && (x <= sprite_x_reg + T_W - 1) && (y >= sprite_y_reg) && (y <= sprite_y_reg + T_H - 1) ? 1 : 0;
    
-    assign torso_on = (dir_reg == RIGHT) && (x >= s_x_reg) && (x <= s_x_reg + T_W - 1) && (y >= s_y_reg + T_H) && (y <= s_y_reg + 2*T_H - 1) ? 1
-                    : (dir_reg == LEFT) && (x >= s_x_reg + X_D) && (x <= s_x_reg + X_MAX - 1) && (y >= s_y_reg + T_H) && (y <= s_y_reg + 2*T_H - 1) ? 1 : 0;
+    assign torso_on = (dir_reg == RIGHT) && (x >= sprite_x_reg) && (x <= sprite_x_reg + T_W - 1) && (y >= sprite_y_reg + T_H) && (y <= sprite_y_reg + 2*T_H - 1) ? 1
+                    : (dir_reg == LEFT) && (x >= sprite_x_reg + X_D) && (x <= sprite_x_reg + X_MAX - 1) && (y >= sprite_y_reg + T_H) && (y <= sprite_y_reg + 2*T_H - 1) ? 1 : 0;
    
     // assign module output signals
-    assign y_x = s_x_reg;
-    assign y_y = s_y_reg;
+    assign mario_x = sprite_x_reg;
+    assign mario_y = sprite_y_reg;
     assign jumping_up = (state_reg_y == jump_up) ? 1 : 0;
     assign direction = dir_reg;
 	
-    // if collision occurs, turn yoshi into a ghost for 2 seconds (200000000 clock cycles);
+    // if collision occurs, turn mario into a ghost for 2 seconds (200000000 clock cycles);
     reg [27:0] collision_time_reg;
     wire [27:0] collision_time_next;
 	
-    // infer ghost_yoshi_time register
+    // infer ghost_mario_time register
     always @(posedge clk, posedge reset)
 	if(reset)
 		collision_time_reg <= 0;
@@ -526,18 +526,18 @@ module yoshi_sprite
     always @*
 		begin
 		// defaults
-		yoshi_on = 0;
+		mario_on = 0;
 		rgb_out = 0;
 		
 		if(head_on || torso_on && video_on)               // if x/y in head/torso region  
 			begin
-			if(game_over_yoshi || collision_time_reg > 0) // if game in gameover state or collision occured        
-				rgb_out = color_data_yoshi_ghost;         // output rgb data for yoshi_ghost
+			if(game_over_mario || collision_time_reg > 0) // if game in gameover state or collision occured        
+				rgb_out = color_data_mario_ghost;         // output rgb data for mario_ghost
 			else
-				rgb_out = color_data_yoshi;               // else output rgb data for yoshi
+				rgb_out = color_data_mario;               // else output rgb data for mario
 		
 			if(rgb_out != 12'b011011011110)               // if rgb data isn't sprite background color
-					yoshi_on = 1;                         // assert yoshi_on signal to let display_top draw current pixel   
+					mario_on = 1;                         // assert mario_on signal to let display_top draw current pixel   
 			end
         end
 endmodule

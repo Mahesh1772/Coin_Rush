@@ -113,6 +113,13 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/flexible_clock.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/new/game_logo_display.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../yoshi_main.srcs/sources_1/new/game_logo_display.v"/>
@@ -230,6 +237,13 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/mini_game.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/new/numbers_rom.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../yoshi_main.srcs/sources_1/new/numbers_rom.v"/>
@@ -252,6 +266,13 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../yoshi_main.srcs/sources_1/new/score_display.v"/>
           <Attr Name="ImportTime" Val="1712215559"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/seg_display.v">
+        <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>

@@ -2,7 +2,7 @@ module game_state_machine
 	(	
 		input wire clk, hard_reset,   // clock and reset inputs for synchronous registers
 		input wire start,             // start button signal input
-        	input wire collision,         // collision detection signal input
+        input wire collision,         // collision detection signal input
 		output wire [1:0] num_hearts, // output number of hearts [0-3]
 		output wire [2:0] game_state, // output game state machine's state
 		output wire game_en,          // output signal asserted when game is in playing/hit states
@@ -24,14 +24,14 @@ module game_state_machine
 	assign start_posedge = start & ~start_reg;
 	
 	// symbolic state declarations
-	localparam [2:0] init     = 3'b000,  // state to idle while nes controller signals settle
-			 idle     = 3'b001,  // start screen 
-		         playing  = 3'b010,  // playing
-			 hit      = 3'b011,  // yoshi has been hit
-			 gameover = 3'b100;  // game over!
+	localparam [2:0] init     = 3'b000,  // initialization state
+			 		 idle     = 3'b001,  // start screen 
+		         	 playing  = 3'b010,  // playing
+			 		 hit      = 3'b011,  // mario has been hit
+			 		 gameover = 3'b100;  // game over!
 	
 	reg [2:0] game_state_reg, game_state_next; // FSM state register
-	reg [27:0] timeout_reg, timeout_next;      // timer register to time yoshi's invincibility post ghost collision
+	reg [27:0] timeout_reg, timeout_next;      // timer register to time mario's invincibility post ghost collision
 	reg [1:0] hearts_reg, hearts_next;         // register to store number of hearts
 	reg game_en_reg, game_en_next;             // register for game enable signal
 	
@@ -54,7 +54,7 @@ module game_state_machine
 	
 	always @*
 		begin
-		// defaults 
+ 
 		game_state_next = game_state_reg;
 		timeout_next    = timeout_reg;
 		hearts_next     = hearts_reg;
@@ -65,7 +65,7 @@ module game_state_machine
 			
 			init:
 				begin	
-				if(timeout_reg > 0)                   // decrement timeout_reg until 0 to let nes controller signals settle
+				if(timeout_reg > 0)                   // decrement timeout_reg until 0 (2 seconds)
 					timeout_next = timeout_reg - 1;
 				else 
 					game_state_next = idle;           // go to idle game state
@@ -83,7 +83,7 @@ module game_state_machine
 			
 			playing:
 				begin
-				if(collision)                         // if yoshi collides with ghost while playing
+				if(collision)                         // if mario collides with ghost while playing
 					begin
 					if(hearts_reg == 1)               // if on last heart
 						begin
@@ -101,7 +101,7 @@ module game_state_machine
 				end
 				
 			hit:
-				begin	                              // yoshi cannot be hit (have hearts decremented)
+				begin	                              // mario cannot be hit (have hearts decremented)
 				if(timeout_reg > 0)                   // decrement timeout_reg until 0 (2 seconds)
 					timeout_next = timeout_reg - 1;
 				else 

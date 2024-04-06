@@ -2,10 +2,10 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Fri Apr  5 16:15:06 2024
-# Process ID: 5664
+# Start of session at: Sat Apr  6 11:01:43 2024
+# Process ID: 1436
 # Current directory: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent30940 C:\Users\bsiva\Desktop\mahesh\University\SEM_4\CG2026\FPGA_EMODS\Big_screen_version\yoshi_main.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3212 C:\Users\bsiva\Desktop\mahesh\University\SEM_4\CG2026\FPGA_EMODS\Big_screen_version\yoshi_main.xpr
 # Log file: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/vivado.log
 # Journal file: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version\vivado.jou
 #-----------------------------------------------------------
@@ -18,17 +18,21 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
-open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 886.543 ; gain = 140.617
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:10 . Memory (MB): peak = 899.297 ; gain = 154.297
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
 update_compile_order -fileset sources_1
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 12
-[Fri Apr  5 16:15:42 2024] Launched synth_1...
+[Sat Apr  6 13:15:52 2024] Launched synth_1...
 Run output will be captured here: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.runs/synth_1/runme.log
-[Fri Apr  5 16:15:42 2024] Launched impl_1...
+[Sat Apr  6 13:15:52 2024] Launched impl_1...
 Run output will be captured here: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.runs/impl_1/runme.log
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 12
-[Fri Apr  5 19:46:22 2024] Launched synth_1...
+[Sat Apr  6 13:17:16 2024] Launched synth_1...
 Run output will be captured here: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.runs/synth_1/runme.log
-[Fri Apr  5 19:46:22 2024] Launched impl_1...
+[Sat Apr  6 13:17:16 2024] Launched impl_1...
 Run output will be captured here: C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.runs/impl_1/runme.log
