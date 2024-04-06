@@ -1,6 +1,7 @@
 module display_top
 	(
-		input wire clk, hard_reset,  // clock signal, reset signal from switch
+		input wire clk,
+		input wire hard_reset,  // clock signal, reset signal from switch
 		input wire data,             // input data from nes controller to FPGA
 		input wire btnU,
 		input wire btnR,
@@ -8,8 +9,6 @@ module display_top
 		input wire btnC,
 		output wire hsync, vsync,    // outputs VGA signals to VGA port
 		output wire [11:0] rgb,      // output rgb signals to VGA DAC
-//		output wire [7:0] sseg,      // output signals to control led digit segments
-//		output wire [3:0] an,         // output signals to multiplex seven-segment display
 		input [9:0] sw,
 		output wire [13:12] led,
         input sw14,
@@ -49,8 +48,6 @@ module display_top
 	wire [25:0] speed_offset; // amount of speed increase is calculated from current game score and routed to ghosts
 	assign speed_offset = (({14'b0, score[13:2]} << 12) < 2750000) ? ({14'b0, score[13:2]} << 12) : 2750000;
 	
-	// nes controller signals are only routed to mario_sprite
-    	// when in playing state and game_en is asserted
 	wire mario_up, mario_left, mario_right;
 	assign mario_up = up & game_en;
 	assign mario_left = left & game_en;
@@ -63,7 +60,21 @@ module display_top
 	// mini-game
     wire [3:0] an_wire;
     wire [6:0] seg_wire;
-    wire [13:12] mini_game_led_wire;    
+    wire [13:12] mini_game_led_wire;
+    
+    wire mini_game_reset;
+    reg mini_game_start = 0;
+    
+    wire btnC_debounced;
+    debounce debounce_btnC_mini_game (clk, btnC, btnC_debounced);
+    
+    always @ (posedge clk) begin
+        if (btnC_debounced) begin
+            mini_game_start = ~mini_game_start;
+        end
+    end    
+    
+    assign mini_game_reset = hard_reset | mini_game_start; 
     
     // instantiate mini-game
     mini_game play_mini_game (.clk(clk), .sw(sw), .sw14(sw14), .an(an_wire), .seg(seg_wire), .led(mini_game_led_wire));
@@ -72,7 +83,7 @@ module display_top
 	vga_sync vsync_unit (.clk(clk), .reset(hard_reset), .hsync(hsync), .vsync(vsync), .video_on(video_on), .p_tick(pixel_tick), .x(x), .y(y));
 	
 	// instantiate mario sprite circuit
-	yoshi_sprite mario_unit (.clk(clk), .reset(reset), .btnU(mario_up), .btnL(mario_left), .btnR(mario_right), .video_on(video_on), .x(x), .y(y), .grounded(grounded), .game_over_mario(game_over_mario), .collision(collision), .rgb_out(mario_rgb),.mario_on(mario_on), .mario_x(mario_x), .mario_y(mario_y), .jumping_up(jumping_up), .direction(direction));
+	mario_sprite mario_unit (.clk(clk), .reset(reset), .btnU(mario_up), .btnL(mario_left), .btnR(mario_right), .video_on(video_on), .x(x), .y(y), .grounded(grounded), .game_over_mario(game_over_mario), .collision(collision), .rgb_out(mario_rgb),.mario_on(mario_on), .mario_x(mario_x), .mario_y(mario_y), .jumping_up(jumping_up), .direction(direction));
 	
 	// instantiate crazy ghost circuit						 
 	ghost_crazy ghost_crazy_unit (.clk(clk), .reset(reset), .mario_x(mario_x), .mario_y(mario_y), .x(x), .y(y), .speed_offset(speed_offset), .ghost_crazy_x(ghost_crazy_x), .ghost_crazy_y(ghost_crazy_y), .ghost_crazy_on(ghost_crazy_on), .rgb_out(ghost_crazy_rgb));
@@ -95,16 +106,10 @@ module display_top
 	// instantiate enemy collision detection circuit
 	enemy_collision enemy_collision_unit (.direction(direction), .mario_x(mario_x), .mario_y(mario_y), .ghost_crazy_x(ghost_crazy_x), .ghost_crazy_y(ghost_crazy_y), .ghost_top_x(ghost_top_x), .ghost_top_y(ghost_top_y), .ghost_bottom_x(ghost_bottom_x), .ghost_bottom_y(ghost_bottom_y), .collision(collision)); 
 	
-	// instantiate eggs circuit
-//	eggs eggs_unit(.clk(clk), .reset(reset), .mario_x(mario_x), .mario_y(mario_y), .direction(direction),
-//		       .x(x), .y(y), .coins_on(coins_on), .rgb_out(coins_rgb), .score(score), .new_score(new_score));
+	// instantiate coins circuit
+    coins coins_unit(.clk(clk), .reset(reset), .mario_x(mario_x), .mario_y(mario_y), .direction(direction), .x(x), .y(y), .mini_game_led(mini_game_led_wire),.coins_on(coins_on), .rgb_out(coins_rgb), .score(score), .new_score(new_score));
 
-    eggs coins_unit(.clk(clk), .reset(reset), .mario_x(mario_x), .mario_y(mario_y), .direction(direction), .x(x), .y(y), .mini_game_led(mini_game_led_wire),.coins_on(coins_on), .rgb_out(coins_rgb), .score(score), .new_score(new_score));
-
-	// instantiate score display circuit
-//	score_display score_display_unit (.clk(clk), .reset(reset), .new_score(new_score), .score(score),
-//					  .x(x), .y(y), .sseg(sseg), .an(an), .score_on(score_on));	
-
+    // instantiate score display circuit
 	score_display score_display_unit (.clk(clk), .reset(reset), .new_score(new_score), .score(score), .x(x), .y(y), .score_on(score_on));	   
 	
 	// instantiate hearts display circuit

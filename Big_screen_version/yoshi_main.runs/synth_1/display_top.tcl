@@ -32,8 +32,9 @@ read_verilog -library xil_defaultlib {
   C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/background_ghost_rom.v
   C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/binary2bcd.v
   C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/blocks_rom.v
-  C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/eggs.v
-  C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/eggs_rom.v
+  C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/coins.v
+  C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/coins_rom.v
+  C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/debounce.v
   C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/enemy_collision.v
   C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/flexible_clock.v
   C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/game_logo_display.v
@@ -49,6 +50,9 @@ read_verilog -library xil_defaultlib {
   C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/grounded.v
   C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/hearts_display.v
   C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/hearts_rom.v
+  C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/mario_damaged_rom.v
+  C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/mario_rom.v
+  C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/mario_sprite.v
   C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/mini_game.v
   C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/numbers_rom.v
   C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/platforms.v
@@ -56,9 +60,6 @@ read_verilog -library xil_defaultlib {
   C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/seg_display.v
   C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/vga_sync.v
   C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/walls_rom.v
-  C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/yoshi_ghost_rom.v
-  C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/yoshi_rom.v
-  C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/yoshi_sprite.v
   C:/Users/bsiva/Desktop/mahesh/University/SEM_4/CG2026/FPGA_EMODS/Big_screen_version/yoshi_main.srcs/sources_1/new/display_top.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being

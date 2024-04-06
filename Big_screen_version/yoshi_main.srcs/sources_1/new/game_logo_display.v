@@ -13,7 +13,7 @@ module game_logo_display
 	assign col = x - 136;
 	
 	// assert game_logo_on when vga x/y is located within logo on screen and color_data doesn't equal background color_data
-	assign game_logo_on = (x >= 136 && x < 504 && y >= 64 && y < 99 && rgb_out != 12'h000) ? 1 : 0;
+	assign game_logo_on = (x >= 136 && x < 504 && y >= 64 && y < 99 && rgb_out != 12'b001110111111) ? 1 : 0;
 	
 	game_logo_rom game_logo_rom_unit (.clk(clk), .row(row), .col(col), .color_data(rgb_out));
 
