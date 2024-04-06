@@ -217,19 +217,19 @@ module coins
 			new_score_next && coin_type_offset == 64 ? score_reg +  500: // gold      coin: p = 01/64, score =  500
 			score_reg;
 	
-	// mini-game
-	reg [13:0] mini_game_score_reg;
-    always @ (posedge clk) begin
-       if (reset)
-           mini_game_score_reg <= 0;
-       else if (mini_game_led[13:12] == 2'b11)
-           mini_game_score_reg <= mini_game_score_reg + 5; 
-    end 
-    //
+	// // mini-game
+	// reg [13:0] mini_game_score_reg;
+    // always @ (posedge clk) begin
+    //    if (reset)
+    //        mini_game_score_reg <= 0;
+    //    else if (mini_game_led[13:12] == 2'b11)
+    //        mini_game_score_reg <= mini_game_score_reg + 5; 
+    // end 
+    // //
     
     // assign score to output
-    assign score = score_reg + mini_game_score_reg;
-    //assign score = score_reg;
+    //assign score = score_reg + mini_game_score_reg;
+    assign score = score + score_reg;
    
     // sprite coordinate addreses, from upper left corner
     // used to index ROM data

@@ -77,7 +77,7 @@ module display_top
     assign mini_game_reset = hard_reset | mini_game_start; 
     
     // instantiate mini-game
-    mini_game play_mini_game (.clk(clk), .sw(sw), .sw14(sw14), .an(an_wire), .seg(seg_wire), .led(mini_game_led_wire));
+    mini_game play_mini_game (.clk(clk), .sw(sw), .sw14(sw14), .an(an_wire), .seg(seg_wire), .led(mini_game_led_wire), .score(score), .new_score(new_score));
 	
 	// instantiate vga_sync circuit
 	vga_sync vsync_unit (.clk(clk), .reset(hard_reset), .hsync(hsync), .vsync(vsync), .video_on(video_on), .p_tick(pixel_tick), .x(x), .y(y));
@@ -110,10 +110,10 @@ module display_top
     coins coins_unit(.clk(clk), .reset(reset), .mario_x(mario_x), .mario_y(mario_y), .direction(direction), .x(x), .y(y), .mini_game_led(mini_game_led_wire),.coins_on(coins_on), .rgb_out(coins_rgb), .score(score), .new_score(new_score));
 
     // instantiate score display circuit
-	score_display score_display_unit (.clk(clk), .reset(reset), .new_score(new_score), .score(score), .x(x), .y(y), .score_on(score_on));	   
+	score_display score_display_unit (.clk(clk), .reset(reset), .score_updated(new_score), .score(score), .x(x), .y(y), .show_score(score_on));	   
 	
 	// instantiate hearts display circuit
-	hearts_display hearts_display_unit (.clk(clk), .x(x), .y(y), .num_hearts(num_hearts),.color_data(hearts_rgb), .hearts_on(hearts_on));
+	hearts_display hearts_display_unit (.clk(clk), .x(x), .y(y), .hearts_number(num_hearts), .hearts_rgb_out(hearts_rgb), .show_hearts(hearts_on));
 	
 	// instantate game FSM circuit
 	game_state_machine game_FSM (.clk(clk), .hard_reset(hard_reset), .start(start), .collision(collision), .num_hearts(num_hearts), .game_state(game_state), .game_en(game_en), .game_reset(game_reset));

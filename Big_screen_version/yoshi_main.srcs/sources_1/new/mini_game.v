@@ -7,6 +7,8 @@ module mini_game(
     input reset,
     output wire [3:0] an,
     output wire [6:0] seg ,
+    output wire [13:0] score,          // output score register value
+    output wire new_score,              // output signal that is asserted when a new score is calculated
     output reg [13:12] led = 0
     );
     
@@ -31,39 +33,90 @@ module mini_game(
     reg btnC_rising_edge;  // Rising edge detection for btnC
     
          
-     always @ (posedge clk) begin
-           gen_interval_count = gen_interval_count + 1;
-           if (gen_interval_count == gen_interval) begin       //  interval between generation of the next random number
-               lfsr_state = {lfsr_state[14:0], lfsr_state[0] ^ lfsr_state[2] ^ lfsr_state[3] ^ lfsr_state[5]};
-               random_num = lfsr_state[3:0] % (gen_range + 1);
-               gen_interval_count = 0;
-           end
-       end
+    always @ (posedge clk) begin
+        gen_interval_count = gen_interval_count + 1;
+        if (gen_interval_count == gen_interval) begin       //  interval between generation of the next random number
+            lfsr_state = {lfsr_state[14:0], lfsr_state[0] ^ lfsr_state[2] ^ lfsr_state[3] ^ lfsr_state[5]};
+            random_num = lfsr_state[3:0] % (gen_range + 1);
+            gen_interval_count = 0;
+        end
+    end
        
-       seg_display unit (.clk(clk), .sw14(sw14), .reset(reset), .num(random_num), .an(an), .seg(seg));
+    seg_display unit (.clk(clk), .sw14(sw14), .reset(reset), .num(random_num), .an(an), .seg(seg));
+
+    // score reg and next-state logic
+    reg [13:0] score_reg;
+    reg [13:0] score_next = 0;
+    // new_score register, signals when a new score is calculated
+    reg new_score_reg, new_score_next;
+
+    assign score = score + score_reg;
+    assign new_score = new_score_reg;
+	
+    // infer score register
+    always @(posedge clk, posedge reset)
+    if(reset) 
+    begin
+	    score_reg <= 0;
+        new_score_reg <= 0;
+    end else
+    begin
+        score_reg <= score_next;
+        new_score_reg <= new_score_next;
+    end
     
     always @ (posedge clk) begin
         if (sw14 && !reset) begin
-            if (random_num == 0 && sw == 10'b00000_00001)
+            if (random_num == 0 && sw == 10'b00000_00001) begin
                 led = led_blink;
-            else if (random_num == 1 && sw == 10'b00000_00010)
+                new_score_next = 1;
+                score_next = score_next + 5;
+            end
+            else if (random_num == 1 && sw == 10'b00000_00010) begin
                 led = led_blink;
-            else if (random_num == 2 && sw == 10'b00000_00100)
+                new_score_next = 1;
+                score_next = score_next + 5;
+            end
+            else if (random_num == 2 && sw == 10'b00000_00100) begin
                 led = led_blink;
-            else if (random_num == 3 && sw == 10'b00000_01000)
+                new_score_next = 1;
+                score_next = score_next + 5;
+            end
+            else if (random_num == 3 && sw == 10'b00000_01000) begin
                 led = led_blink;
-            else if (random_num == 4 && sw == 10'b00000_10000)
+                new_score_next = 1;
+                score_next = score_next + 5;
+            end
+            else if (random_num == 4 && sw == 10'b00000_10000) begin
                 led = led_blink;
-            else if (random_num == 5 && sw == 10'b00001_00000)
+                new_score_next = 1;
+                score_next = score_next + 5;
+            end
+            else if (random_num == 5 && sw == 10'b00001_00000) begin
                 led = led_blink;
-            else if (random_num == 6 && sw == 10'b00010_00000)
+                new_score_next = 1;
+                score_next = score_next + 5;
+            end
+            else if (random_num == 6 && sw == 10'b00010_00000) begin
                 led = led_blink;
-            else if (random_num == 7 && sw == 10'b00100_00000)
+                new_score_next = 1;
+                score_next = score_next + 5;
+            end
+            else if (random_num == 7 && sw == 10'b00100_00000) begin
                 led = led_blink;
-            else if (random_num == 8 && sw == 10'b01000_00000)
+                new_score_next = 1;
+                score_next = score_next + 5;
+            end
+            else if (random_num == 8 && sw == 10'b01000_00000) begin
                 led = led_blink;
-            else if (random_num == 9 && sw == 10'b10000_00000)
+                new_score_next = 1;
+                score_next = score_next + 5;
+            end
+            else if (random_num == 9 && sw == 10'b10000_00000) begin
                 led = led_blink;
+                new_score_next = 1;
+                score_next = score_next + 5;
+            end
             else
                 led = 0;
         end
